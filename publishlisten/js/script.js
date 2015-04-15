@@ -1,5 +1,33 @@
 'use strict';
 
+function Queue(){
+	this.fns = [];
+	this.delays = [];
+	this.args = [];
+	this.count = 0;
+	this.index = 0;
+	}
+	
+Queue.prototype.add = function(fn,delay,arg){
+	this.count = this.fns.push(fn);
+	this.delays.push(delay);	
+	this.args.push(arg);
+	}
+
+Queue.prototype.exec = function(){
+	var arg = this.args[this.index];
+	arg !== undefined ? this.fns[this.index](this.args[this.index]):this.fns[this.index]();
+	this.index++;
+	this.go();
+	}
+	
+Queue.prototype.go = function(){
+	if(this.index < this.count){
+		var self = this;
+		window.setTimeout(function(){self.exec()},this.delays[this.index]);
+		}
+	}	
+
 function Event(){
 	this.listeners = [];
 	this.count = 0;
@@ -58,6 +86,45 @@ var listener1 = (function(){
 		};
 	})();
 
+console.log('testing event...\n');	
 station.subscribe(listener1.consume);
 station.publish();
 console.log(listener1.get());
+
+
+
+function fn1(){
+	var str = new Date();
+	str += ': '+'fn1';
+	console.log(str);
+	}
+	
+var fn2 = function(arg){
+	var str = new Date();
+	str += ': ' + 'fn2' + ' ' + arg.val;
+	console.log(str);
+};	
+
+var obj3 = (function(){
+	var x = 13;
+	function fn3(){
+		var str = new Date();
+		str += ': ' + 'fn3';
+		str += '\nx: ' + x;
+		console.log(str);		
+		}
+	return{
+		fn3:fn3
+		}
+	})();
+	
+console.log('\ntesting queue...');
+console.log(new Date());
+var queue = new Queue();
+queue.add(fn1,60*500);
+queue.add(fn2,120*500,{val:5});
+queue.add(obj3.fn3,60*500);
+queue.go();
+
+
+
