@@ -12,6 +12,7 @@ Queue.prototype.add = function(fn,delay,arg){
 	this.count = this.fns.push(fn);
 	this.delays.push(delay);	
 	this.args.push(arg);
+	return this;
 	}
 
 Queue.prototype.exec = function(){
@@ -121,10 +122,7 @@ var obj3 = (function(){
 console.log('\ntesting queue...');
 console.log(new Date());
 var queue = new Queue();
-queue.add(fn1,60*500);
-queue.add(fn2,120*500,{val:5});
-queue.add(obj3.fn3,60*500);
-queue.go();
+queue.add(fn1,60*500).add(fn2,120*500,{val:5}).add(obj3.fn3,60*500).go();
 
 
 
