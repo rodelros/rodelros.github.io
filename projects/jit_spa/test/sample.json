@@ -1,0 +1,9 @@
+{
+    "name":"rodelros",
+    "id":5,
+    "categories":["one","two","three"],
+    "data":{
+      "status":"success",
+      "message":"this data is good"
+    }
+}
