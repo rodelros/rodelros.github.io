@@ -2,8 +2,6 @@
 
 var ajax = (function(){
 
-
-
 	function stringify(arg){
 		var data = '';
 		for(var prop in arg){
@@ -11,15 +9,15 @@ var ajax = (function(){
 				data += prop + '=' + arg[prop] + '&'
 			}
 		}
-
 		return data.substring(0,data.length-1);
-
 	}
 
-  //arg:
-  // url
-  // data
-  // func
+	/*****
+  arg:
+   url
+   data
+   func
+	*****/
 	function post(arg){
 		var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 		xmlhttp.onreadystatechange=function(){
@@ -34,11 +32,13 @@ var ajax = (function(){
 		xmlhttp.send(stringify(arg.data)) : xmlhttp.send();
 	}
 
-  //arg:
-  // url
-  // data
-  // func
-  // (opt) responseType
+	/*****
+  arg:
+   url
+   data
+   func
+   (opt) responseType
+	*****/
   function get(arg){
 		var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     xmlhttp.onreadystatechange=function(){
@@ -59,3 +59,19 @@ var ajax = (function(){
     get:get
 	};
 })();
+
+var ui = (function(d){
+
+	function load(url,element){
+		ajax.get({
+			url:url,
+			func:function(response){
+				element.innerHTML = response;
+			}
+		});
+	}
+
+	return{
+		load:load
+	}
+})(document);
