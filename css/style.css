@@ -1,0 +1,41 @@
+body{
+  font-size: 1em;
+}
+
+div{
+  margin: 0;
+  padding: 0;
+}
+
+#header{
+
+}
+
+#slidemenu{
+  z-index: 2;
+  cursor: default;
+}
+
+#content{
+  margin: 0 auto;
+}
+
+#content #left{
+
+}
+
+#content #main{
+  margin: 0 auto;
+}
+
+#prevnext span{
+  cursor: default;
+}
+
+#content #right{
+
+}
+
+#footer{
+
+}
