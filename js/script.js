@@ -76,6 +76,9 @@ var entry = function(d){
         ui.prevnext.updateControl();
         cache[entry] = el.children[0];
 
+        ui.menuList.select(ui.slidemenu, entry);
+        ui.menuList.select(ui.rightmenu, entry);
+
       })
 
     } else {
@@ -83,7 +86,8 @@ var entry = function(d){
       el.removeChild(el.children[0]);
       el.appendChild(cache[entry]);
       ui.prevnext.updateControl();
-
+      ui.menuList.select(ui.slidemenu, entry);
+      ui.menuList.select(ui.rightmenu, entry);
     }
   }
 
@@ -127,17 +131,14 @@ var prevnext = function(d){
   return obj;
 }
 
-var slidemenu = function(d){
+var menuList = function(d){
 
-  var el = d.getElementById('slidemenu'),
-  menu = el.children[0],
-  ul = el.children[1],
-  obj = {};
+  var obj = {};
 
-  function load(){
+  function create(menu){
     registry.sort();
     var l = ui.registryMax,
-    yy='', mm='', dd='', yr='', el=null;
+    yy='', mm='', dd='', yr='', li=null;
 
     for(var i=0;i <=l; i++){
 
@@ -147,30 +148,73 @@ var slidemenu = function(d){
 
       if(yy !== yr){
         yr = yy;
-        el = d.createElement('li');
-        el.className = 'year';
-        el.innerHTML = yy;
-        ul.appendChild(el);
+        li = d.createElement('li');
+        li.className = 'year';
+        li.innerHTML = yy;
+        menu.ul.appendChild(li);
       }
 
-      el = d.createElement('li');
-      el.className = 'entry';
-      el.innerHTML = month[mm] + ' ' + dd;
-      //el.setAttribute('data-url', registry[i] + '.html');
-      el.setAttribute('data-index', i);
+      li = d.createElement('li');
+      li.className = 'entry';
+      li.innerHTML = month[mm] + ' ' + dd;
+      li.setAttribute('data-index', i);
+      li.setAttribute('data-value', registry[i]);
 
-      ul.appendChild(el);
-      el.onclick = function(){
+      menu.ul.appendChild(li);
+      li.onclick = function(){
         ui.entry.show(parseInt(this.getAttribute('data-index')));
-
       };
-
-
     }
   }
 
-  obj.load = load;
+  function select(menu, val){
 
+    if(menu.selected !== null) menu.selected.classList.remove('selected');
+
+    var l = menu.ul.children.length,
+    li=null;
+
+    for(var i =0; i < l; i++){
+      li = menu.ul.children[i];
+      if(li.dataset.value === val){
+        li.classList.add('selected');
+        menu.selected = li;
+        return;
+      }
+    }
+  }
+
+  function updateList(ul){
+    create(ul);
+  }
+
+  obj.updateList = updateList;
+  obj.select = select;
+  return obj;
+};
+
+var rightmenu = function(d){
+
+  var el = d.getElementById('rightmenu'),
+  ul = el.children[0],
+  selected = null,
+  obj = {};
+
+  obj.ul = ul;
+  obj.selected = selected;
+  return obj;
+};
+
+var slidemenu = function(d){
+
+  var el = d.getElementById('slidemenu'),
+  menu = el.children[0],
+  ul = el.children[1],
+  selected = null,
+  obj = {};
+
+  obj.ul = ul;
+  obj.selected = selected;
   return obj;
 
 }
@@ -194,6 +238,8 @@ var ui = (function(d){
   obj.prevnext = prevnext(d);
   obj.entry = entry(d);
   obj.slidemenu = slidemenu(d);
+  obj.menuList = menuList(d);
+  obj.rightmenu = rightmenu(d);
   obj.registryIndex = registryIndex;
   obj.registryMax = registryMax;
 
@@ -201,6 +247,7 @@ var ui = (function(d){
 })(document);
 
 (function(){
-  ui.slidemenu.load();
+  ui.menuList.updateList(ui.slidemenu);
+  ui.menuList.updateList(ui.rightmenu);
   ui.entry.show(0);
 })();
