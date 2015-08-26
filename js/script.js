@@ -58,9 +58,9 @@ var ajax = (function(){
 	};
 })();
 
-var entry = function(d){
-  var el = d.getElementById('entry'),
-  cache = {};
+var entry = function(el){
+  //var el = d.getElementById('entry'),
+  var cache = {};
 
   function show(i){
     if(ui.registryMax < i) return;
@@ -76,8 +76,8 @@ var entry = function(d){
         ui.prevnext.updateControl();
         cache[entry] = el.children[0];
 
-        ui.menuList.select(ui.slidemenu, entry);
-        ui.menuList.select(ui.rightmenu, entry);
+        ui.slidemenu.select(entry);
+        ui.rightmenu.select(entry);
 
       })
 
@@ -86,8 +86,8 @@ var entry = function(d){
       el.removeChild(el.children[0]);
       el.appendChild(cache[entry]);
       ui.prevnext.updateControl();
-      ui.menuList.select(ui.slidemenu, entry);
-      ui.menuList.select(ui.rightmenu, entry);
+      ui.slidemenu.select(entry);
+      ui.rightmenu.select(entry);
     }
   }
 
@@ -96,9 +96,9 @@ var entry = function(d){
   }
 }
 
-var prevnext = function(d){
-  var el = d.getElementById('prevnext'),
-  prev = el.children[0],
+var prevnext = function(el){
+  //var el = d.getElementById('prevnext'),
+  var prev = el.children[0],
   next = el.children[1],
   obj = {};
 
@@ -131,15 +131,27 @@ var prevnext = function(d){
   return obj;
 }
 
-var menuList = function(d){
+var Menu = function(ul){
+  this.ul = ul
+  this.selected = null;
+}
 
-  var obj = {};
+Menu.prototype = {
+  select: function(val){
+    if(this.selected !== null) this.selected.classList.remove('selected');
+    var l = this.ul.children.length,li=null;
+    for(var i = 0; i < l; i++){
+      li = this.ul.children[i];
+      if(li.dataset.value === val){
+        li.classList.add('selected');
+        this.selected = li;
+        return;
+      }
+    }
 
-  function create(menu){
-    registry.sort();
-    var l = ui.registryMax,
-    yy='', mm='', dd='', yr='', li=null;
-
+  },
+  update: function(){
+    var l = registry.length-1, yy='', mm='', dd='', yr='', li=null, d=document;
     for(var i=0;i <=l; i++){
 
       yy = registry[i].substr(0,4);
@@ -151,7 +163,7 @@ var menuList = function(d){
         li = d.createElement('li');
         li.className = 'year';
         li.innerHTML = yy;
-        menu.ul.appendChild(li);
+        this.ul.appendChild(li);
       }
 
       li = d.createElement('li');
@@ -160,64 +172,13 @@ var menuList = function(d){
       li.setAttribute('data-index', i);
       li.setAttribute('data-value', registry[i]);
 
-      menu.ul.appendChild(li);
+      this.ul.appendChild(li);
       li.onclick = function(){
         ui.entry.show(parseInt(this.getAttribute('data-index')));
       };
     }
   }
-
-  function select(menu, val){
-
-    if(menu.selected !== null) menu.selected.classList.remove('selected');
-
-    var l = menu.ul.children.length,
-    li=null;
-
-    for(var i =0; i < l; i++){
-      li = menu.ul.children[i];
-      if(li.dataset.value === val){
-        li.classList.add('selected');
-        menu.selected = li;
-        return;
-      }
-    }
-  }
-
-  function updateList(ul){
-    create(ul);
-  }
-
-  obj.updateList = updateList;
-  obj.select = select;
-  return obj;
 };
-
-var rightmenu = function(d){
-
-  var el = d.getElementById('rightmenu'),
-  ul = el.children[0],
-  selected = null,
-  obj = {};
-
-  obj.ul = ul;
-  obj.selected = selected;
-  return obj;
-};
-
-var slidemenu = function(d){
-
-  var el = d.getElementById('slidemenu'),
-  menu = el.children[0],
-  ul = el.children[1],
-  selected = null,
-  obj = {};
-
-  obj.ul = ul;
-  obj.selected = selected;
-  return obj;
-
-}
 
 var ui = (function(d){
 
@@ -235,11 +196,10 @@ var ui = (function(d){
 	}
 
   obj.load = load;
-  obj.prevnext = prevnext(d);
-  obj.entry = entry(d);
-  obj.slidemenu = slidemenu(d);
-  obj.menuList = menuList(d);
-  obj.rightmenu = rightmenu(d);
+  obj.prevnext = prevnext(d.getElementById('prevnext'));
+  obj.entry = entry(d.getElementById('entry'));
+  obj.slidemenu = new Menu((d.getElementById('slidemenu')).children[1]);
+  obj.rightmenu = new Menu((d.getElementById('rightmenu')).children[0]);
   obj.registryIndex = registryIndex;
   obj.registryMax = registryMax;
 
@@ -247,7 +207,7 @@ var ui = (function(d){
 })(document);
 
 (function(){
-  ui.menuList.updateList(ui.slidemenu);
-  ui.menuList.updateList(ui.rightmenu);
+  ui.slidemenu.update();
+  ui.rightmenu.update();
   ui.entry.show(0);
 })();
