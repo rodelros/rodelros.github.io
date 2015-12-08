@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Arczone</title>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div class="content">
+    <header class="pageHeader"> 
+    </header>
+
+    <div id="carousel">
+        <div id="carouselImage"><!-- carousel image --></div>
+        <div id="carouselMarker"><!-- marker --></div>
+    </div>
+
+    <nav id="mainNav">
+        <ul>
+            <li data-page="services.html" class="defaultNav">Services</li>
+            <li data-page="schedule.html" class="defaultNav">Class Schedule</li>
+            <li data-page="gallery.html" class="defaultNav">Gallery</li>
+            <li data-page="contact.html" class="defaultNav">Contact</li>
+            <li data-page="about.html" class="defaultNav">About</li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="history">
+            <header>
+                <div>Activities/Programs</div>
+                <div>(Old Articles/Announcements)</div>
+            </header>
+            <ul><!-- list of articles --></ul>
+
+            <div id="historyNav">
+                <span>Latest</span>
+                <span>Older</span>
+                <span>Newer</span>
+            </div>
+        </section>
+
+        <section class="display" id="display">
+        </section>
+
+    </main>
+    <footer>
+        <div>Copyright by Arczone</div>
+
+    </footer>
+    </div>
+
+    <script src="js/config.js"></script>
+    <!--<script src="js/registry.js"></script>-->
+    <script src="registry/registry.articles.js"></script>
+    <script src="registry/registry.carousel.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

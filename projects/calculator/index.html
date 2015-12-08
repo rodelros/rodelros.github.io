@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<charset="utf-8">
+
+<title>Javascript Calculator</title>
+
+<style>
+.fleft{
+	float: left;
+}
+
+button{
+	width: 50px;
+	margin: 2px;
+}
+
+#ops{
+	margin-left: 15px;
+}
+
+#display{
+	border: 1px solid #808080;
+	width: 300px;
+	height: 30px;
+	margin-bottom: 10px;
+    padding: 3px;
+}
+
+#equation{
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#result{
+    float: right;
+    clear: right;
+}
+</style>
+
+</head>
+<body>
+
+<div id="calculator">
+	<div id="display">
+        <div id="equation">&nbsp;</div>
+        <div id="result"></div>
+	</div><!-- display -->
+	
+	<div id="keys">
+		<div id="numbers" class="fleft">
+			<button id="btnOne">1</button>
+			<button id="btnTwo">2</button>
+			<button id="btnThree">3</button>
+			<br/>
+			<button id="btnFour">4</button>
+			<button id="btnFive">5</button>
+			<button id="btnSix">6</button>
+			<br/>
+			<button id="btnSeven">7</button>
+			<button id="btnEight">8</button>
+			<button id="btnNine">9</button>
+			<br/>
+			<button id="btnTen">0</button>
+            <button id="btnPoint">.</button>
+		</div><!-- numbers -->
+		
+		<div id="ops" class="fleft">
+			<div id="commands">
+				<button id="btnMultiply">*</button>
+				<button id="btnDivide">/</button>
+				<button id="btnAdd">+</button>
+				<br/>
+				<button id="btnMinus">-</button>
+				<button id="btnSqrt">√</button>
+			</div><!-- commands -->
+			
+			<button id="btnEquals">=</button>
+			<button id="btnClear">C</button>
+			<button id="btnBack">◄</button>
+		</div><!-- ops -->
+		
+	</div><!-- keys -->
+</div><!-- calculator -->
+
+<div id="credits"></div>
+
+<script src="calculator.js"></script>
+</body>
+</html>

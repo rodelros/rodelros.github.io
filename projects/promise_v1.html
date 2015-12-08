@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+<h1>output</h1>
+<div id="log-container">
+</div>
+
+<script>
+// logging function so we can avoid console.log and alert
+function log(varargs) {
+    var args = Array.prototype.slice.call(arguments, 0);
+    var message = args.join(" ");
+    var container = document.getElementById('log-container');
+    var messageDiv = document.createElement('div');
+    messageDiv.innerHTML = message;
+    container.appendChild(messageDiv);
+}   
+
+function Promise(fn) {
+  var callback = null;
+  this.then = function(cb) {
+    callback = cb;
+  };
+
+  function resolve(value) {
+    // force callback to be called in the next
+    // iteration of the event loop, giving
+    // callback a chance to be set by then()
+    setTimeout(function() {
+      callback(value);
+    }, 1);
+  }
+
+  fn(resolve);
+}
+
+function doSomething() {
+    var fn = function(resolve){
+	var value = 42;
+	resolve(value);
+	}
+
+    return new Promise(fn);
+}
+
+doSomething().then(function(value) {
+    log("got a value", value);
+});
+
+</script>
+
+</body>
+
+</html>
