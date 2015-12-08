@@ -197,3 +197,7 @@ footer div {
 .moveUp {
     margin-top: -300px;
 }
+
+.hidden {
+    display: none;
+}
