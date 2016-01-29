@@ -1,6 +1,6 @@
 ﻿registry.carousel = [
-    'seminar1.jpg',
-    'seminar2.jpg',
+    'seminar1.JPG',
+    'seminar2.JPG',
     'office1.jpg',
     'seminar3.jpg',
     'seminar4.jpg',
