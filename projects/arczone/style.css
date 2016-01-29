@@ -3,6 +3,10 @@
     font-family: Tahoma,Helvetica, sans-serif;
 }
 
+.logo{
+	width: 200px;
+}
+
 .content {
     width: 960px;
     margin: 0 auto;
@@ -23,8 +27,12 @@
     float: left;
     width: 20%;
     text-align: center;
-    
+	position: relative;
 
+}
+
+#mainNav .submenu li{
+	width: 100%;
 }
 
 .defaultNav {
@@ -38,6 +46,15 @@
     line-height: 4rem;
 }
 
+.submenu{
+	position: absolute;
+}
+
+.submenu_active{
+	
+	
+}
+/*****
 #mainNav ul li:nth-child(1) {
     background-color: #037FCC;
 }
@@ -57,6 +74,7 @@
 #mainNav ul li:nth-child(5) {
     background-color: #CC4040;
 }
+*****/
 
 main {
     display: block;
@@ -201,3 +219,4 @@ footer div {
 .hidden {
     display: none;
 }
+

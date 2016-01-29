@@ -8,7 +8,8 @@
 <body>
 
     <div class="content">
-    <header class="pageHeader"> 
+    <header class="pageHeader">
+	<img class="logo" src="img/logo.png"/>
     </header>
 
     <div id="carousel">
@@ -17,13 +18,27 @@
     </div>
 
     <nav id="mainNav">
-        <ul>
-            <li data-page="services.html" class="defaultNav">Services</li>
-            <li data-page="schedule.html" class="defaultNav">Class Schedule</li>
-            <li data-page="gallery.html" class="defaultNav">Gallery</li>
-            <li data-page="contact.html" class="defaultNav">Contact</li>
-            <li data-page="about.html" class="defaultNav">About</li>
-        </ul>
+	
+		<ul>
+			<li>
+				Home
+				<ul class="hidden submenu">
+					<li data-page="history.html">History</li>
+					<li data-page="missionvision.html">Mission & Vision</li>
+				</ul>
+			</li>
+			<li>
+				Services
+				<ul class= "hidden submenu">
+					<li data-page="schedule.html">E-Learning Schedule</li>
+					<li data-page="classroom.html">Classroom</li>
+					<li data-page="onsitetraining.html">Onsite Training</li>
+				</ul>
+			</li>
+			<li data-page="gallery.html">Gallery</li>
+			<li data-page="contact.html">Contact</li>
+			<li data-page="commendations.html">Commendations</li>
+		</ul>
     </nav>
 
     <main>

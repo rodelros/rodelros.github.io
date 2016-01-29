@@ -10,7 +10,8 @@ var ui = (function (d) {
 
             var ul = el.children[0],
                 c = ul.children.length,
-                active = null;
+                active = null,
+				activeSubmenu = null;
 
             function setActive(p) {
                 if (active != null) {
@@ -21,26 +22,66 @@ var ui = (function (d) {
                 p.classList.add('activePage');
             }
 
-            function showPage(p) {
-                var url = config.pagesDir + p.dataset.page;
+            function showPage() {
+                var url = config.pagesDir + this.dataset.page;
+				hideActiveSubmenu();
                 services.file.get(url, ui.display.show);
             }
+			
+			function showSubmenu(){
+					var submenu = this.children[0];
+					hideActiveSubmenu();
+					submenu.classList.toggle('hidden', false);
+					activeSubmenu = submenu;
+			}
+			
+			function hideActiveSubmenu(){
+				if(activeSubmenu !== null){
+					activeSubmenu.classList.toggle('hidden', true);
+					activeSubmenu = null;
+				}
+				
+			}
 
-            function onClick() {
-                if (this === active) return;
-                setActive(this);
-                showPage(this);
-            }
-
-            for (var i = 0; i < c ; i++) {
-                ul.children[i].addEventListener('click',onClick);
-            }
-             
-            function clear() {
+			function clear() {
                 if (active == null) return;
                 active.classList.remove('activePage');
                 active = null;
             }
+			
+			function setHandlers(){
+				var items = ul.querySelectorAll('li'), item;
+				for(var i = 0, l = items.length; i < l; i++){
+					item = items[i];
+					if(item.dataset.page !== undefined){
+						item.addEventListener('click', showPage, true);
+					} else{
+						item.addEventListener('click', showSubmenu, true);
+						
+					}
+				}
+				
+			}
+			
+			
+			// initializations
+			setHandlers();
+			
+			/*****
+            for (var i = 0; i < c ; i++) {
+				
+                ul.children[i].addEventListener('click',onClick);
+				
+				//submenu
+				if(ul.children[i].children[0] && ul.children[i].children[0].nodeName === 'UL'){
+					var submenu = ul.children[i].children[0];
+					for(var j = 0, l = submenu.children.length; j < l; j++){
+						submenu.children[j].addEventListener('click', show);
+					}
+				}
+            }
+			*****/
+
 
             return {
                 clear:clear
@@ -56,7 +97,17 @@ var ui = (function (d) {
                 image.src = config.imgDir + registry.carousel[i];
             }
         },
-
+		
+		page: {
+			show: function(menuItem){
+				var p = menuItem.dataset.page
+				if(p){
+					var url = config.pagesDir + p;
+					services.file.get(url, ui.display.show);
+				} 
+			}
+		},
+		
         carousel: (function (el) {
 
             var imgs = [], index = 0,
@@ -265,7 +316,11 @@ var ui = (function (d) {
 
                 show: function (content) {
                     el.innerHTML = content;
-                }
+                },
+				
+				clear: function(){
+					el.innerHTML = '';
+				}
             }
         })(d.getElementById('display')),
 
