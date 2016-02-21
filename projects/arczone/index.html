@@ -7,7 +7,18 @@
 </head>
 <body>
 
-    <div class="content">
+    <div id="mainView" class="content">
+
+    </div><!-- mainView -->
+
+	<div id="selectorView" class="view hidden">
+		<img src="img/logo.png">
+		<div data-view="localView">Local</div>
+		<div data-view="internationalView">International</div>
+	</div><!-- selectorView -->
+	
+	<div id="localView" class="view hidden">
+	
     <header class="pageHeader">
 	<img class="logo" src="img/logo_small.png"/>
     </header>
@@ -64,11 +75,17 @@
     <footer>
         <div>Copyright by Arczone</div>
 
-    </footer>
-    </div>
-
+    </footer>	
+	
+	
+	</div><!-- localView -->
+	
+	<div id="internationalView" class="view hidden">
+		<div>This page is under construction.</div>
+		<div>Local</div>
+	</div><!-- internationalView -->
+	
     <script src="js/config.js"></script>
-    <!--<script src="js/registry.js"></script>-->
     <script src="registry/registry.articles.js"></script>
     <script src="registry/registry.carousel.js"></script>
     <script src="js/services.js"></script>

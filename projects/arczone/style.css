@@ -91,6 +91,22 @@ main header div {
     text-align: center;
 }
 
+#selectorView{
+	margin-top: 10%;
+	font-size: 5rem;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+#selectorView > img{
+	float: left;
+	width: 25%;
+}
+
+#selectorView > div{
+	cursor: pointer;
+}
+
 #history {
     float: left;
     margin-right: 100px;
