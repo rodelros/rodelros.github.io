@@ -105,25 +105,17 @@ ui.localView = (function (localView) {
 
 
 
-
 ui.localView.mainNav = (function(mainNav){
             var ul = mainNav.children[0],
                 c = ul.children.length,
-                active = null,
-				activeSubmenu = null;
-
-            function setActive(p) {
-                if (active != null) {
-                    active.classList.remove('activePage');
-                }
-
-                active = p;
-                p.classList.add('activePage');
-            }
+                //active = null,
+				activeSubmenu = null,
+				activeTopmenu = null;
 
             function showPage() {
                 var url = config.pagesDir + this.dataset.page;
 				hideActiveSubmenu();
+				resetTopmenu();
                 services.file.get(url, ui.localView.display.show);
             }
 			
@@ -142,11 +134,39 @@ ui.localView.mainNav = (function(mainNav){
 				
 			}
 
-			function clear() {
-                if (active == null) return;
-                active.classList.remove('activePage');
-                active = null;
+			function resetTopmenu() {
+                //if (active == null) return;
+                //active.classList.remove('activePage');
+                //active = null;
+				
+				if(activeTopmenu !== null){
+					activeTopmenu.classList.toggle('activeTopmenu', false);
+					activeTopmenu = null;
+				}
             }
+			
+			function setTopmenuHandlers(){
+				var menus = ul.children,
+				i = menus.length - 1,
+				m;
+				
+				while(i >= 0){
+					m = menus[i];
+					m.addEventListener('click', setActiveTopmenu, true);
+					i--;
+				}
+			}
+			
+			function setActiveTopmenu(){
+				if(this === activeTopmenu) return;
+				
+				if(activeTopmenu !== null){
+					activeTopmenu.classList.toggle('activeTopmenu', false);
+				}
+
+				activeTopmenu = this;
+				activeTopmenu.classList.toggle('activeTopmenu', true);
+			}
 			
 			function setHandlers(){
 				var items = ul.querySelectorAll('li'), item;
@@ -163,11 +183,13 @@ ui.localView.mainNav = (function(mainNav){
 			}
 			
 			(function(){
+				setTopmenuHandlers();
 				setHandlers();
 			})();
 
             return {
-                clear:clear
+                hideActiveSubmenu: hideActiveSubmenu,
+				resetTopmenu: resetTopmenu
             }	
 })(document.getElementById('mainNav'));
 
@@ -300,7 +322,6 @@ ui.localView.history = (function(history){
 		ul = history.children[1];
 
 	function onhistoryClick() {
-		ui.localView.mainNav.clear();
 		services.file.get(config.articlesDir + this.dataset.article + '.html', ui.localView.display.show);
 	}
 

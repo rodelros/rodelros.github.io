@@ -5,6 +5,14 @@
 
 .logo{
 	width: 200px;
+	vertical-align: middle;
+	
+}
+
+.pageHeader{
+	background-image: url('img/green-layout-background.jpg');	
+	font-size: 1.9rem;
+	color: lightgreen;
 }
 
 .content {
@@ -14,6 +22,7 @@
 
 #mainNav {
     display: block;
+	
 }
 
 #mainNav ul {
@@ -23,12 +32,38 @@
     margin: 0;
 }
 
-#mainNav ul li {
+.activeTopmenu{
+	.box-shadow: 1px 10px 10px -7px gray;
+	padding: 10px 0px;
+}
+
+#mainNav .topmenu{
     float: left;
     width: 20%;
     text-align: center;
 	position: relative;
 	color: #0F1D0B;
+	cursor: pointer;	
+	.padding: 9px 0px;
+	line-height: 2rem;
+	box-shadow: 1px 10px 10px -7px gray
+}
+
+.submenu{
+	background-color: inherit;
+	box-shadow: 1px 10px 10px -7px gray;
+	width: 100%;
+	position:absolute;
+}
+
+.shadowed{
+	box-shadow: 1px 10px 10px -7px gray;
+}
+
+
+
+.widesub{
+	width: 120%;
 }
 
 #mainNav .submenu li{
@@ -40,15 +75,12 @@
     cursor: pointer;
     line-height: 3rem;
 }
-
+/*****
 .activePage {
     cursor: default;
     line-height: 4rem;
 }
-
-.submenu{
-	position: absolute;
-}
+*****/
 
 .submenu_active{
 	
@@ -181,12 +213,13 @@ footer div {
 }
 
 #carousel {
-    border-left: 1px solid lightblue;
-    border-right: 1px solid lightblue;
-    border-top: 1px solid lightblue;
+    .border-left: 1px solid lightblue;
+    .border-right: 1px solid lightblue;
+    .border-top: 1px solid lightblue;
     position: relative;
     height: 300px;
     overflow:hidden;
+	z-index: 2;
 }
 
 #carouselImage {
