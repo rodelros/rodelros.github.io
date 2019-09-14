@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>lit-html basics</title>
+
+    </head>
+    <body>
+        <div id="mainDisplay"></div>
+        <p>
+        <button id="btnUpdate">Update</button>
+        </p>
+
+        <script type="module">
+            "use strict";
+
+            import {html, render} from 'https://unpkg.com/lit-html?module'            
+    
+            // Define a template
+            let num = 5;
+            const myTemplate = (name) => html`<p>Hello ${name}, num = ${num}</p>`;
+
+            // Render the templlate
+            render(myTemplate('World'), document.getElementById('mainDisplay'));
+            
+            document.getElementById('btnUpdate').addEventListener('click', ()=>{
+                render(myTemplate('what'), document.body);
+            });
+
+        </script>       
+    </body>
+
+
+</html>
