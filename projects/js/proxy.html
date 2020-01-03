@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+</head>
+<body>
+
+<div id="letterhead">
+</div><!-- letterhead -->
+
+<div id="container">
+</div><!-- container -->
+
+<input type="text" id="txtDisplay"/>
+
+<script>
+
+let state = {
+    id:'GVFD43',
+    name:'test'
+};
+
+let validation = new Proxy(state,{
+    get:function(obj, prop){
+        return prop in obj ? obj[prop] : undefined;
+    },
+    set:function(obj, prop, newVal){
+        if(prop === 'id' && newVal === ''){
+            return false;
+        }
+
+        obj[prop] = newVal;
+        return true;
+    }
+});
+
+
+let txtDisplay = new Proxy(document.getElementById('txtDisplay'), {
+    set:function(obj, prop, newVal){
+        if(prop === 'value'){
+            console.log(newVal);
+        }
+    }
+});
+
+console.log(validation.id);
+console.log(validation.id = "");
+console.log(validation.id='YTGR12');
+console.log(validation.id);
+
+</script>
+
+</body>
+</html>

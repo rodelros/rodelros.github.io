@@ -23,5 +23,5 @@ def for_in():
     for x in s:
         print(x)
 
-#if_elif_else_loop()
+if_elif_else_loop()
 for_in()

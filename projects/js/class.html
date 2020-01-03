@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Class basics</title>
+
+    </head>
+    <body>
+
+        
+    <script>
+
+        function Agent(id){
+            this.id = id;
+        }
+
+        Agent.prototype = {
+            setId: function(id){
+                this.id = id;
+            }
+        };
+        
+        class Name{
+            firstNames = [];
+            middleName = '';
+            lastName = '';
+            suffix = '';
+            prefix = '';
+
+            // getters
+            get firstName(){
+                return this.firstNames.length > 0 ? this.firstNames[0] : '';
+            }
+
+            // setters
+            set firstName(firstName){
+                this.firstNames.length > 0 ? this.firstNames[0] = firstName : this.firstNames.push(firstName);
+            }
+
+            // methods
+            addFirstName(firstName){
+                this.firstNames.push(firstName);
+            }
+        }
+
+        class Account{
+            constructor(id, name){
+                this.name = name;
+            }
+
+            // getters
+            get name(){
+                return this.name;
+            }
+
+            tmp = 'what';
+        }
+
+        //------------
+        let juan = new Name();
+        console.log(juan.firstName);
+
+        juan.addFirstName('Juan');
+        console.log(juan.firstName);
+
+        juan.firstName = 'Pedro';
+        console.log(juan.firstNames[0]);
+
+        let agentOne = new Agent(1);
+        console.log(agentOne.id);
+
+        agentOne.setId(6);
+        console.log(agentOne.id);
+
+
+    </script>    
+    </body>
+
+
+</html>

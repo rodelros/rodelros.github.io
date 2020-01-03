@@ -1,6 +1,6 @@
 
 def greeting():
-    greeting = input("Write a greeting: ")
+    greeting = input("Write a greeting:\" ")
     print(greeting)
 
 def string_test():
@@ -31,6 +31,7 @@ def loops_test():
         print(a, end=", ")
         a,b = b, a+b
 
+greeting()
 #string_test()
 #lists_test()
 loops_test()
