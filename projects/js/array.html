@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Class basics</title>
+
+    </head>
+    <body>
+
+        
+    <script>
+        let arr = [1,2,3];
+        let sum = (total, num) => total + num;
+        let addOne = num => num + 1;
+        let total = arr.map(addOne).reduce(sum, 0);
+        //console.log(total);      
+        //console.log(arr);  
+
+        let accounts = [
+            {id:0, value:'first', name:'juan'},
+            {id:1, value:'another', name:'dos'},
+            {id:2, value:'again', name:'tres'},
+            {id:3, value:'one', name:'quatro'},
+            {id:4, value:'first', name:'cinco'}
+        ];
+
+
+        let isValue = (i, val) => i === val;
+        let isFirst = i => isValue(i.value, 'first');
+        let firsts = accounts.filter(isFirst);
+        console.log(firsts);
+
+    </script>    
+    </body>
+
+
+</html>

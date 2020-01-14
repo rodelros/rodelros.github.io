@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+</head>
+<body>
+
+<div id="app">
+    {{message}}
+    <div v-bind:title="msgLoaded">Hover here</div>
+    <div v-if="isVisible">Make this visible</div>
+
+    <p>
+    <ol>
+        <li v-for="todo in arrTodos">{{todo.text}}</li>
+    </ol>
+    </p>
+
+    <p>
+
+    <button v-on:click="reverseMessage">Reverse Message</button>
+    </p>
+
+    <p>
+        <button @click="showMessage">Show Message</button>
+    </p>
+
+    <p>
+    <input v-model="message" type="text">
+    </p>
+
+    <div>
+        <ol>
+            <todo-item
+            v-for="todoItem in todoItems"
+            v-bind:todo="todoItem"
+            v-bind:key="todoItem.id"></todo-item>
+        </ol>
+    </div>
+</div>
+
+<script src="vue_v2_6_11/vue.js"></script>
+<script src="components/todo-item.js"></script>
+
+<script>
+'use strict'
+
+let app = new Vue({
+    el: '#app',
+    data:{
+        message:'Hello Vue!',
+        msgLoaded: `Loaded on ${new Date().toLocaleString()}`,
+        isVisible: false,
+        arrTodos:[
+            {text: 'Learn javascript'},
+            {text: 'Learn vue'},
+            {text: 'Build demo'}
+        ],
+        todoItems:[
+            {id:0, val:'Do this'},
+            {id:1, val:'then this'},
+            {id:2, val:'and this'}
+        ],
+    },
+    methods:{
+        reverseMessage: function(){
+            this.message = this.message.split('').reverse().join('');
+        },
+        showMessage: function(){
+            alert(this.message);
+        }
+    }
+});
+
+
+
+</script>
+
+</body>
+</html>
