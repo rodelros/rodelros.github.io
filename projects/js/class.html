@@ -41,6 +41,10 @@
             addFirstName(firstName){
                 this.firstNames.push(firstName);
             }
+
+            setPrefix(prefix){
+                this.prefix = prefix;
+            }
         }
 
         class Account{
@@ -66,11 +70,16 @@
         juan.firstName = 'Pedro';
         console.log(juan.firstNames[0]);
 
+        juan.setPrefix("Mr");
+        console.log(juan);
+
         let agentOne = new Agent(1);
         console.log(agentOne.id);
 
         agentOne.setId(6);
         console.log(agentOne.id);
+
+
 
 
     </script>    

@@ -1,0 +1,20 @@
+use cases
+---------
+admin
+  set up roles
+  set up accounts
+  set up tags
+
+teacher
+  set class schedule
+  update attendance
+  set up class activities; quizzes, exams, etc
+  set student score for each class activity
+  update student report card
+  set class syllabus
+
+student
+  enroll in a class
+  drop class
+  see all available classes
+  see a calendar showing schedule of classes

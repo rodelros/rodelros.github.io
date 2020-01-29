@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using json.Extensions;
+using json.Models;
 
 namespace json.Controllers
 {
@@ -24,13 +25,48 @@ namespace json.Controllers
         [HttpGet]
         public ActionResult GetAccounts()
         {
+            /*****/
             var result = new[]
             {
                 new {Name = "Rodel", Id = "001"},
                 new {Name = "Ros", Id = "002"}
             } ;
 
-            return Ok(result);
+            var jsonStr = JsonSerializer.Serialize<dynamic>(result, 
+                new JsonSerializerOptions {
+                      IgnoreNullValues = true
+                });
+
+            dynamic obj = Deserialize(jsonStr);
+
+            return Ok(jsonStr);
+            /*****/
+
+            /*****
+            //return Ok(GetAccountJson());
+            *****/
+            
+        }
+
+        private object Deserialize(string jsonStr)
+        {
+            return JsonSerializer.Deserialize<object>(jsonStr, new JsonSerializerOptions { AllowTrailingCommas = true, IgnoreNullValues = true });
+        }
+
+        private string GetAccountJson()
+        {
+            var account = new Account {
+                Name = new Name { First = "Rodel", Middle = "Carr", Last = "Ros" },
+                Transactions = new List<Transaction> { new Transaction { Date = DateTime.Now, Amount = 3.4} },
+                Id = 5
+            };
+           
+
+            return JsonSerializer.Serialize<Account>(account,
+                new JsonSerializerOptions
+                {
+                    IgnoreNullValues = true
+                });
         }
 
         [HttpGet]
