@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+</head>
+<body>
+
+<div id="main">
+    <input type="text" value="name" id="txtName"/>
+    <button id="btnSet">Set</button>
+
+</div>
+
+<script>
+
+
+let txtName = document.getElementById('txtName');
+let btnSet = document.getElementById('btnSet');
+btnSet.addEventListener('click', (ev) => {
+    testPromise();
+});
+
+function testPromise(){
+    let p1 = new Promise((resolve, reject) => {
+        let name = txtName.value;
+        alert('p1:' + name);
+        if(name === 'rodel')
+        resolve({name:name})
+        else
+        reject({message:'not the one'});
+    });
+
+    p1
+    .then((val) => {
+        alert(val.name);
+        return{val:5};
+    })
+    .then((val) => {
+        alert(val.val);
+    })
+    .catch((err) => {
+        alert(err.message);
+    });
+}
+
+
+
+
+</script>
+</body>
+</html>
