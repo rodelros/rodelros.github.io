@@ -39,11 +39,13 @@ function Add(x, y) {
     return x + y;
 }
 console.log("5 plus 8 is " + Add(5, 8));
-//---------- inheritance
 var Account = /** @class */ (function () {
     function Account(id) {
         this.id = id;
     }
+    Account.prototype.addTransaction = function (t) {
+        console.log("Date: " + t.dte + " Amount: " + t.amount);
+    };
     return Account;
 }());
 var Person = /** @class */ (function (_super) {
@@ -58,3 +60,6 @@ var Person = /** @class */ (function (_super) {
 }(Account));
 var person = new Person('HFRTGF');
 console.log("person's id is " + person.getId());
+person.addTransaction({ dte: new Date(), amount: 54 });
+var t1 = { dte: new Date(), amount: 756 };
+person.addTransaction(t1);

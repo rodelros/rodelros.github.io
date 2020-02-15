@@ -43,7 +43,22 @@ function Add(x:number, y:number) :number {
 console.log(`5 plus 8 is ${Add(5,8)}`);
 
 //---------- inheritance
-class Account{
+
+interface Transaction{
+    dte: Date;
+    amount: number;
+}
+
+interface AddTransaction{
+    addTransaction(t: Transaction) : void;
+}
+
+class Account implements AddTransaction{
+
+    addTransaction(t: Transaction): void {
+       console.log(`Date: ${t.dte} Amount: ${t.amount}`);
+    }
+
     constructor(public id:string){
     }
 }
@@ -60,5 +75,9 @@ class Person extends Account{
 
 let person = new Person('HFRTGF');
 console.log(`person's id is ${person.getId()}`);
+person.addTransaction({dte: new Date(), amount: 54});
+
+let t1:Transaction = {dte: new Date(), amount:756};
+person.addTransaction(t1);
 
 

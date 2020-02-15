@@ -1,4 +1,3 @@
-
 CREATE DATABASE academe;
 
 \c academe
@@ -13,7 +12,8 @@ CREATE TABLE accounts(
     dob DATE NOT NULL,
     email VARCHAR(256),
     gender Gender,
-    is_active BOOLEAN     
+    is_active BOOLEAN,
+	password VARCHAR(50)
 );
 
 CREATE TABLE roles(
@@ -22,17 +22,38 @@ CREATE TABLE roles(
     description VARCHAR(256)
 );
 
+INSERT INTO roles (name, description)
+VALUES ('master', 'Manages the system.');
+
+
 CREATE TABLE account_role_map(
-    id BIGSERIAL NOT NULL PRIMARY KEY,
     account BIGINT NOT NULL REFERENCES accounts(id),
     role BIGINT NOT NULL REFERENCES roles(id)
+);
+
+/**********
+Ex. code
+  MODIFY_ROLES
+  READ_ROLES
+  READ_REPORT_CARDS
+  MODIFY_REPORT_CARDS
+**********/
+CREATE TABLE functionalities(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	description VARCHAR(256),
+	code VARCHAR(50)
+);
+
+CREATE TABLE role_functionality_map(
+	functionality BIGINT NOT NULL REFERENCES functionalities(id),
+	role BIGINT NOT NULL REFERENCES roles(id)
 );
 
 CREATE TABLE classes(
     id BIGSERIAL NOT NULL PRIMARY KEY,
     credits SMALLINT NOT NULL,
     name VARCHAR(256),
-    short_name VARCHAR(25),
+    code VARCHAR(25),
     lecturer BIGINT REFERENCES accounts(id)
 );
 
@@ -51,7 +72,6 @@ CREATE TABLE class_enrollment_tags(
 );
 
 CREATE TABLE class_enrollment_tag_map(
-    id BIGSERIAL NOT NULL PRIMARY KEY,
     tag SMALLINT NOT NULL REFERENCES class_enrollment_tags(id),
     class_enrollment BIGINT NOT NULL REFERENCES class_enrollments(id)    
 );
@@ -71,7 +91,6 @@ CREATE TABLE class_schedules(
 );
 
 CREATE TABLE class_schedule_tag_map(
-    id BIGSERIAL NOT NULL PRIMARY KEY,
     tag SMALLINT NOT NULL REFERENCES class_schedule_tags(id),
     schedule BIGINT NOT NULL REFERENCES class_schedules(id) 
 );
@@ -110,6 +129,38 @@ CREATE TABLE class_activity_results(
    activity BIGINT NOT NULL REFERENCES class_activities(id),
    student BIGINT NOT NULL REFERENCES accounts(id),
    grade SMALLINT NOT NULL 
+);
+
+/**********
+Ticketing system
+**********/
+CREATE TABLE ticket_statuses(
+	id SERIAL NOT NULL PRIMARY KEY,
+	value VARCHAR(25) NOT NULL
+);
+
+CREATE TABLE flows(
+	id SERIAL NOT NULL PRIMARY KEY,
+	value VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE ticket_status_map(
+	flow SMALLINT NOT NULL REFERENCES flows(id),
+	status SMALLINT NOT NULL REFERENCES ticket_statuses(id),
+	next_status SMALLINT NOT NULL REFERENCES ticket_statuses(id)
+);
+
+CREATE TABLE tickets(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	status SMALLINT NOT NULL REFERENCES ticket_statuses(id)
+);
+
+/**********
+note: prevent circular reference in code
+**********/
+CREATE TABLE ticket_map(
+	ticket BIGINT NOT NULL REFERENCES tickets(id),
+	sub_ticket BIGINT NOT NULL REFERENCES tickets(id)
 );
 
 

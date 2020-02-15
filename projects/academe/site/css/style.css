@@ -1,0 +1,48 @@
+html{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+.main{
+	display: flex;
+}
+
+.page_header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.flex-direction: row || wrap;
+}
+
+.page_footer{
+	display: flex;
+}
+
+.page_logo{
+	width:20%;
+	height: 50%;
+}
+
+.page_menu{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page_menu li{
+	display: inline;
+}
+
+/*********
+Tablets
+**********/
+@media only screen and (min-width: 600px){
+	
+}
+
+/*********
+Desktop
+**********/
+@media only screen and (min-width:768px){
+	
+}
