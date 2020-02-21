@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>CSS scratchpad</title>
+
+		<style>
+			*{
+				box-sizing: border-box;
+			}
+		
+			html, body{
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			
+			.dialog{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: lightgray;
+				height: 100%;
+			}
+			
+			.dialog div:first-child{
+				max-width:80%;
+				background-color: lightblue;
+				padding: 2rem;
+			}
+			
+			
+			.dialog div:first-child header:first-child{
+			
+			}
+			
+			.dialog div:first-child .content{
+			
+			}
+			
+			.dialog div:first-child .buttons{
+			
+			}
+		</style>
+    </head>
+    <body>
+
+		<div class="dialog">
+			<div>
+				<header>This is the title</header>
+				<div class="content">
+					this is the content of the dialog
+				</div>
+				<div class="buttons">
+					<button>Ok</button>
+					<button>Cancel</button>
+					<button>Close</button>
+				</div>
+				<footer></footer>
+			</div>
+		</div>
+
+    </body>
+</html>

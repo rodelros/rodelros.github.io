@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Custom Elements</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<script src="js/script.js"></script>
+		
+    </head>
+    <body>
+
+	<button id="btnShowWelcome">Show welcome</button>
+	<account-display></account-display>
+	<modal-dialog id="dialog"></modal-dialog>
+	<modal-dialog id="dialog2"></modal-dialog>
+
+	<script>
+		'use strict';
+		
+		let btnShowWelcome = el('btnShowWelcome');
+		let dialog = el('dialog');
+		let dialog2 = el('dialog2');
+		btnShowWelcome.addEventListener('click', function(ev){
+			//showWelcome();
+			dialog.show();
+			dialog2.show();
+		});
+	</script>
+    </body>
+</html>
