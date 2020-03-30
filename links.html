@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Collection of links</title>
+<style>
+body{
+	font-family: Helvetica, sans-serif;
+	font-size: 0.85em;
+}
+
+details{
+	padding: 1em;
+	border: 1px solid lightblue;
+	margin-top: 1em;
+}
+
+summary{
+
+}
+
+.mainDescription{
+	font-weight: bold;
+	font-size: 1em;
+}
+</style>
+
+</head>
+<body>
+
+
+<main id="main"></main>
+
+
+<script>
+
+(function(d){
+
+	let dotnet = [
+		['https://www.youtube.com/watch?v=qkJ9keBmQWo', 'Entity Framework best practices']
+		,['https://www.youtube.com/watch?v=qJmEI2LtXIY', 'Repository pattern in EFCore']
+		,['https://www.youtube.com/watch?v=aUbXGs7YTGo', 'Change your habits', 'Modern techniques for modern C#']
+	];
+	
+	let consoleRoms = [
+		['www.portalroms.com', 'portalroms']
+	];
+	
+	let main = d.getElementById('main');
+		
+	function render(name, links){
+		let display = `<details><summary>${name}</summary>`;
+		
+		
+		links.forEach((link, i) => {
+
+			display += `<p>`;
+			
+			link.forEach((detail, j) => {
+				if(j === 0){
+					display += `<a href='${detail}'>${detail}</a>`;
+				} else if(j === 1){
+					display += `<br/><span class='mainDescription'>${detail}</span>`;
+				} else {
+					display += `<br/>${detail}`;
+				}
+				
+			});
+			
+			display += `</p>`;
+			
+		});
+		
+		display += '</details>';
+		main.innerHTML += display;
+	}
+	
+	render('C# .NET', dotnet);
+	render('Console ROMs', consoleRoms);
+
+	
+
+})(document);
+
+</script>
+
+
+
+
+</body>
+</html>

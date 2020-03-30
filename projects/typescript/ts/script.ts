@@ -53,6 +53,10 @@ interface AddTransaction{
     addTransaction(t: Transaction) : void;
 }
 
+interface CancelTransaction{
+    cancelTransaction(t: Transaction): void;
+}
+
 class Account implements AddTransaction{
 
     addTransaction(t: Transaction): void {
@@ -63,13 +67,17 @@ class Account implements AddTransaction{
     }
 }
 
-class Person extends Account{
+class Person extends Account implements CancelTransaction{
     constructor(id:string){
         super(id);
     }
 
     getId() :string{
         return this.id;
+    }
+
+    cancelTransaction(t: Transaction): void{
+        console.log(`Cancelling transaction ${t.amount}`);
     }
 }
 
@@ -79,5 +87,16 @@ person.addTransaction({dte: new Date(), amount: 54});
 
 let t1:Transaction = {dte: new Date(), amount:756};
 person.addTransaction(t1);
+
+person.cancelTransaction(t1);
+
+//-------------- generics
+
+function identity<T>(arg:T): T{
+    return arg;
+}
+
+console.log(identity('this is a string'));
+
 
 

@@ -14,8 +14,10 @@ function el(id){
 }
 
 (function(){
-	include('components/account-info.js');
-	include('components/account-display.js');
-	include('components/modal-dialog.js');
-	include('js/show_welcome.js');
+	include('components/button-close.js');
+	include('components/modal-component.js');
+	include('components/atomic-component.js');
+	include('components/child-component.js');
+	include('components/sub-component.js');
+	include('components/parent-component.js');
 })();

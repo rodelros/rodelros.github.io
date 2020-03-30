@@ -56,6 +56,9 @@ var Person = /** @class */ (function (_super) {
     Person.prototype.getId = function () {
         return this.id;
     };
+    Person.prototype.cancelTransaction = function (t) {
+        console.log("Cancelling transaction " + t.amount);
+    };
     return Person;
 }(Account));
 var person = new Person('HFRTGF');
@@ -63,3 +66,9 @@ console.log("person's id is " + person.getId());
 person.addTransaction({ dte: new Date(), amount: 54 });
 var t1 = { dte: new Date(), amount: 756 };
 person.addTransaction(t1);
+person.cancelTransaction(t1);
+//-------------- generics
+function identity(arg) {
+    return arg;
+}
+console.log(identity('this is a string'));

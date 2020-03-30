@@ -6,26 +6,48 @@
         <title>Custom Elements</title>
         <link rel="stylesheet" type="text/css" href="style.css">
 		<script src="js/script.js"></script>
+
 		
     </head>
     <body>
-
+	
 	<button id="btnShowWelcome">Show welcome</button>
-	<account-display></account-display>
-	<modal-dialog id="dialog"></modal-dialog>
-	<modal-dialog id="dialog2"></modal-dialog>
+	<!--
+	<atomic-component data-status="Active"></atomic-component>
+	<button-close id="btnClose1">this in the comment, this will not be displayed</button-close>
+	<button-close id="btnClose2" data-label="Hide"></button-close>
+	<div>I'm here</div>
+	<sub-component></sub-component>
+	<parent-component></parent-component>
+	<modal-component data-label="Sample">
+	</modal-component>
+	-->
+	<child-component></child-component>
 
 	<script>
-		'use strict';
+	class Index{
+		constructor(d){
+			this.d = d;
+			this.btnShowWelcome = el('btnShowWelcome');
+			this.val = 5;
+		}
 		
-		let btnShowWelcome = el('btnShowWelcome');
-		let dialog = el('dialog');
-		let dialog2 = el('dialog2');
-		btnShowWelcome.addEventListener('click', function(ev){
-			//showWelcome();
-			dialog.show();
-			dialog2.show();
-		});
+		run(){
+			this.btnShowWelcome.addEventListener('click', (evt) => {
+				this._showWelcome(evt);
+			});
+		}
+		
+		_showWelcome(evt){
+			let el = evt.target;
+			console.log(this.val);
+			console.log(el.innerHTML);
+		}
+	}
+	
+	let index = new Index(document);
+	index.run();
+		
 	</script>
     </body>
 </html>

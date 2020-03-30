@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>String templates</title>
+
+    </head>
+    <body>
+
+	<div id="display"></div>
+
+	<script>
+		'use strict';
+				
+		const itemTemplate = document.createElement('template');
+		itemTemplate.innerHTML = `
+		<div>
+			${info}
+		</div>`;
+
+		document.getElementById('display').appendChild(itemTemplate.content.cloneNode(true));		
+		
+	</script>
+    </body>
+</html>
