@@ -25,6 +25,52 @@ summary{
 }
 </style>
 
+<script>
+	let sections = [];
+	
+	// add the sections here
+	
+	sections[sections.length] = {
+		name: 'Dotnet Core',
+		links: [
+			 ['https://www.youtube.com/watch?v=qkJ9keBmQWo', 'Entity Framework best practices']
+			,['https://www.youtube.com/watch?v=qJmEI2LtXIY', 'Repository pattern in EFCore']
+			,['https://www.youtube.com/watch?v=aUbXGs7YTGo', 'Change your habits', 'Modern techniques for modern C#']
+		]
+	};
+	
+	sections[sections.length] = {
+		name: 'Web',
+		links: [
+			 ['https://htmldom.dev/', 'DOM operations in plain js']
+			,['https://csslayout.io/', 'Helpful CSS layouts']
+		]
+	};
+	
+	sections[sections.length] = {
+		name: 'Web Components',
+		links: [
+			 ['https://open-wc.org/guide/#quickstart', 'Open Web Components guide']
+			,['https://github.com/material-components/material-components-web-components', 'Material design web components']
+			,['https://html.spec.whatwg.org/multipage/custom-elements.html', 'HTML standard', 'Custom elements']
+			,['https://github.com/WebReflection/uhtml#readme', 'uhtml', 'String template-based components']
+		]
+	};
+	
+	sections[sections.length] = {
+		name: 'Philippine news sites',
+		links: [
+			 ['https://www.philstar.com/', 'Philstar']
+			,['https://www.gmanetwork.com/', 'GMA network']
+			,['https://news.abs-cbn.com/','ABS CBN news']
+		]
+	};
+	
+	section
+	
+
+</script>
+
 </head>
 <body>
 
@@ -35,22 +81,17 @@ summary{
 <script>
 
 (function(d){
-
-	let dotnet = [
-		['https://www.youtube.com/watch?v=qkJ9keBmQWo', 'Entity Framework best practices']
-		,['https://www.youtube.com/watch?v=qJmEI2LtXIY', 'Repository pattern in EFCore']
-		,['https://www.youtube.com/watch?v=aUbXGs7YTGo', 'Change your habits', 'Modern techniques for modern C#']
-	];
-	
-	let consoleRoms = [
-		['www.portalroms.com', 'portalroms']
-	];
-	
+		
 	let main = d.getElementById('main');
-		
+	
+	// render the sections
+	sections.forEach((section) => {
+		render(section.name, section.links);
+	});
+	
 	function render(name, links){
+	
 		let display = `<details><summary>${name}</summary>`;
-		
 		
 		links.forEach((link, i) => {
 
@@ -58,7 +99,7 @@ summary{
 			
 			link.forEach((detail, j) => {
 				if(j === 0){
-					display += `<a href='${detail}'>${detail}</a>`;
+					display += `<a target='_blank' href='${detail}'>${detail}</a>`;
 				} else if(j === 1){
 					display += `<br/><span class='mainDescription'>${detail}</span>`;
 				} else {
@@ -75,11 +116,6 @@ summary{
 		main.innerHTML += display;
 	}
 	
-	render('C# .NET', dotnet);
-	render('Console ROMs', consoleRoms);
-
-	
-
 })(document);
 
 </script>

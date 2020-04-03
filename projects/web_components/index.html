@@ -5,25 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Custom Elements</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-		<script src="js/script.js"></script>
-
-		
+		<script src="js/script.js"></script>	
     </head>
     <body>
 	
 	<button id="btnShowWelcome">Show welcome</button>
+	
+	<!-- <atomic-component data-status="Active"></atomic-component> -->
+	<!-- <button-close id="btnClose1">this in the comment, this will not be displayed</button-close> -->
+	<!-- <button-close id="btnClose2" data-label="Hide"></button-close> -->
+	<!-- <sub-component></sub-component> -->
+	<!-- <parent-component></parent-component> -->
+	<!-- <modal-component data-label="Sample">
+	</modal-component> -->
+	<!-- <child-component></child-component> -->
 	<!--
-	<atomic-component data-status="Active"></atomic-component>
-	<button-close id="btnClose1">this in the comment, this will not be displayed</button-close>
-	<button-close id="btnClose2" data-label="Hide"></button-close>
-	<div>I'm here</div>
-	<sub-component></sub-component>
-	<parent-component></parent-component>
-	<modal-component data-label="Sample">
-	</modal-component>
+	<table-noshadow id="tblNoShadow" data-value="table_one"></table-noshadow>
+	<br/>
+	<table-noshadow id="tblNoShadow2" data-value="table_two"></table-noshadow>
 	-->
-	<child-component></child-component>
-
+	
+	<grid-ns id="grid"></grid-ns>
+	
 	<script>
 	class Index{
 		constructor(d){
@@ -47,6 +50,30 @@
 	
 	let index = new Index(document);
 	index.run();
+	
+	
+	window.onload = () => {
+		let grid = document.getElementById('grid');
+		grid.addRow({id:1, name:'Pikachu', role:'agent'});
+		grid.addRow({id:2, name:'Raichu', role:'agent'});
+		grid.addRow({id:3, name:'JigglyPuff', role:'agent'});
+		grid.addRow({id:4, name:'Magnetron', role:'agent'});
+		grid.addRow({id:5, name:'Mewt', role:'agent'});
+		grid.addRow({id:6, name:'MewTwo', role:'agent'});
+		
+		alert('Getting 2nd row')
+		let row2 = grid.rowById(2);
+		alert(row2.name);
+		
+		alert('Update row name');
+		row2.name = 'snorlax';
+		grid.updateRow(row2);
+		
+		alert('Delete row');
+		let row3 = grid.rowById(3);
+		grid.deleteRow(row3);
+	};
+
 		
 	</script>
     </body>
