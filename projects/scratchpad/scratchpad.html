@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>CSS scratchpad</title>
+
+		<style>
+		
+			/*----- fonts -----*/
+			
+			@font-face {
+			  font-family: Alata;
+			  font-style: normal;
+			  src: url('fonts/alata-v1-latin/alata-v1-latin-regular.woff') format('woff') /* Modern Browsers */
+			}	
+
+			@font-face {
+			  font-family: Roboto;
+			  font-style: normal;
+			  font-weight: 100;
+			  src: url('fonts/roboto-v20-latin/roboto-v20-latin-regular.woff') format('woff') /* Modern Browsers */
+			}			
+		
+			/*----- Reset -----*/
+		
+			*{
+				box-sizing: border-box;
+			}
+		
+			html, body{
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				-webkit-font-smoothing: antialiased;
+				font-family: Tahoma, Geneva, sans-serif;
+				font-size: 14px;
+			}
+			
+			body{
+				.background-image: url("images/terraces.jpg");
+			}
+		
+			/*----- Common -----*/
+			
+			.panel{
+				border-radius: 0 0 4px 4px;
+				box-shadow: 0px 3px 5px -2px gray, 0px -1px 3px -3px gray; 			
+			}
+			
+			/*----- dialog -----*/
+			
+			.dialog{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				background-color: rgba(192,192,192,0.3);
+			}
+			
+			.dialog div:first-child{
+				max-width:80%;
+				padding: 2rem;
+			}
+			
+
+			
+			/*----- calendar -----*/
+			.calendar{
+				display: inline-flex;
+				padding: 0.5rem;
+			}
+			
+			.calendar th{
+				text-align: center;
+				width: 3rem;
+				font-weight: normal;
+				padding: 0.5rem;
+			}
+			
+			.calendar td{
+				text-align: center;
+			}
+			
+			
+		</style>
+    </head>
+    <body>
+
+		<header></header>
+		<main></main>
+		<footer></footer>
+		
+        <!--
+		<div class="dialog">
+			<div class="panel">
+				<header>This is the title</header>
+				<div class="content">
+					this is the content of the dialog, we can extend this but the maximum width cannot exceed 80 percent of the screen width.
+				</div>
+				<div class="buttons">
+					<button>Ok</button>
+					<button>Cancel</button>
+					<button>Close</button>
+				</div>
+				<footer></footer>
+			</div>
+		</div>
+        -->
+		
+		<div class="calendar panel">
+			<div class="month" id="lMonth">
+				<header></header>
+				<table>
+					<tr> <th>Su</th> <th>Mo</th> <th>Tu</th> <th>We</th> <th>Th</th> <th>Fr</th> <th>Sa</th> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				</table>
+			</div>
+			<div class="month" id="rMonth">
+				<header></header>
+				<table>
+					<tr> <th>Su</th> <th>Mo</th> <th>Tu</th> <th>We</th> <th>Th</th> <th>Fr</th> <th>Sa</th> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				</table>	
+			</div>
+		</div>
+		
+		<script>
+			'use strict';
+			
+			var calendar = (function(d){
+				var lMonth = d.getElementById('lMonth');
+				var rMonth = d.getElementById('rMonth');
+				var MONTH = {JAN:0, FEB:1, MAR:2, APR:3, MAY:4, JUN:5, JUL:6, AUG:7, SEP:8, OCT:9, NOV:10, DEC:11};
+				var DAY = {MON:1, TUE:2, WED:3, THU:4, FRI:5, SAT:6, SUN:7};
+
+				var lastDateOfMonth = function(month, year){
+					var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+					if(month == 2){
+						var dte = new Date(year, month, 29);
+						if(dte.getMonth() == 2){
+							return 29; // leap year
+						}
+					}
+					
+					return days[month];
+				}
+				
+				var renderWeek = function(row, dayOfMonth, lastDate, dayOfWeek = DAY.MON){
+					while(dayOfWeek <= DAY.SUN && lastDate >= dayOfMonth){
+						row.children[dayOfWeek-1].innerText = dayOfMonth;
+						dayOfMonth++;
+						dayOfWeek++;
+					}
+					
+					return dayOfMonth;
+				}
+				
+				var renderMonth = function(monthEl, month, year, currentDate){
+					var dte = new Date(year, month, 1);
+					var dayOfWeek = dte.getDay();
+					var dayOfMonth = dte.getDate();
+					var lastDate = lastDateOfMonth(month, year);
+					
+					var tbl = monthEl.querySelector('table');
+					var tableRows = tbl.children[0].children;
+					var tableRowStart = 1
+					
+					var weekRow; // corresponds to table row
+					for(weekRow = 0; weekRow <= 6 && dayOfMonth <= lastDate; weekRow++){
+						dayOfMonth = renderWeek(tableRows[tableRowStart + weekRow], dayOfMonth, lastDate, dayOfWeek);
+						dayOfWeek = DAY.MON;
+					}					
+				}
+				
+				var render = function(month, year, currentDate){
+					renderMonth(lMonth, month, year, currentDate);
+					renderMonth(rMonth, month + 1, year, currentDate);
+				}
+				
+				return{
+					MONTH:MONTH,
+					DAY:DAY,
+					render:render
+				}
+			})(document);
+			
+			// test
+			calendar.render(calendar.MONTH.FEB, 2019, new Date());
+		</script>
+    </body>
+</html>

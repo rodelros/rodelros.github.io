@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "iR36RzIescrwdMi30ByhJBP0q5/cVSQBSD2XOUjh61A0hgdnjO/vfKKS3kpBw1sQhfKrXqNTcF/iJna2pGl2hQ==",
+  "success": true,
+  "projectFilePath": "C:\\data\\rodelros.github.io\\projects\\dotnet\\awsRedis\\WebApi\\WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BCS-RROS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\BCS-RROS\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\BCS-RROS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\BCS-RROS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

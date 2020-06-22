@@ -80,7 +80,8 @@ namespace json.Controllers
                 ],
                 ""properties"":{
                     ""content"":""some content""
-                }
+                },
+                ""status"":""5""
             }";
 
             using var jd = JsonDocument.Parse(jsonStr);
@@ -93,12 +94,20 @@ namespace json.Controllers
                 var str = content.GetString();
             }
 
+            if (jd.RootElement.TryGetProperty("status", out var status))
+            {
+                status.TryGetInt16(out var stat);
+                return Ok(stat);
+            }
+
             if(properties.TryGetProperty("notAgain", out var notAgain))
             {
                 // this block will not be executed
             }
-            return Ok(jsonStr);
+            return Ok(properties.ToString().Trim());
         }
+
+
 
 
     }
