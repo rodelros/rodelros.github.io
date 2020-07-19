@@ -12,6 +12,10 @@ main{
 	max-width: 60em;	
 }
 
+.selection-grid-variables{
+	--width: 100px;
+}
+
 @media screen and (min-width: 30em) and (max-width: 63.236em) {
 	main { width: 30em; }
 }

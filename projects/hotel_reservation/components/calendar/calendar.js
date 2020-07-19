@@ -8,15 +8,18 @@
 	const template = document.createElement('template');
 	template.innerHTML = `
 		<div class="month">
-			<header></header>
 			<table>
-				<tr> <th>Su</th> <th>Mo</th> <th>Tu</th> <th>We</th> <th>Th</th> <th>Fr</th> <th>Sa</th> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-				<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				<thead>
+					<tr> <th>Su</th> <th>Mo</th> <th>Tu</th> <th>We</th> <th>Th</th> <th>Fr</th> <th>Sa</th> </tr>
+				</thead>
+				<tbody>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+					<tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+				</tbody>
 			</table>
 		</div>`;
 
@@ -24,11 +27,19 @@
 	
 		constructor(){
 			super();
+			
+			// common values
+			this._css = {
+				 SELECTED_START_DATE: 'selected-start-date'
+				,SELECTED_END_DATE: 'selected-end-date'
+				,CURRENT_DATE: 'current-date'
+				,AVAILABLE_CELL: 'available-cell'
+			};
 		}
 		
 		connectedCallback(){
 			this.appendChild(template.content.cloneNode(true));
-			this._initState();
+			this._init();
 			this._render();
 		}
 		
@@ -36,39 +47,57 @@
 			this._removeEventListeners();
 		}
 		
+		
 		//----- private methods -----
 		
-		_initState(){
+		_init(val){
+			this._initCss();	
+			this._initState(val);
 			
-			this._initCssStyle();
-			
-			let today = new Date();
-			this._state = {
-				currentDate: today.getDate()
-				,selectedStartDateEl: null
-				,selectedEndDateEl: null
-				,currentDateEl: null
-				,selectedStartDate: null // used to initialize the selected start date
-				,selectedEndDate: null // used to initialize the selected end date
-				,month: today.getMonth()
-				,year: today.getFullYear()
-			};
+			this._selectStartDate(this._state.selectedStartDate);
+			this._selectEndDate(this._state.selectedEndDate);
+			this._selectCurrentDate(this._state.currentDate);
 		}
 		
-		_initCssStyle(){
+		
+		_initState(val){
 			
-			if(this._state){
-				if(this._state.selectedStartDateEl){
-					this._state.selectedStartDateEl.classList.remove('selected-start-date');
-				}
-				
-				if(this._state.selectedEndDateEl){
-					this._state.selectedEndDateEl.classList.remove('selected-end-date');
-				}
+			if(val){
+				this._state = {
+					 currentDate: val.currentDate
+					,selectedStartDate: val.selectedStartDate
+					,selectedEndDate: val.selectedEndDate
+					,month: val.month
+					,year: val.year
+				};
+			} else {
+				let today = new Date();
+				this._state = {
+					currentDate: today
+					,selectedStartDate: null // used to initialize the selected start date
+					,selectedEndDate: null // used to initialize the selected end date
+					,month: today.getMonth()
+					,year: today.getFullYear()
+				};				
+			}
 
-				if(this._state.currentDateEl){
-					this._state.currentDateEl.classList.remove('current-date');
-				}
+		}
+		
+		_initCss(){
+			
+			let selectedStartDateEl = this.querySelector('.' + this._css.SELECTED_START_DATE);
+			if(selectedStartDateEl){
+				selectedStartDateEl.classList.remove(this._css.SELECTED_START_DATE);
+			}
+			
+			let selectedEndDateEl = this.querySelector('.' + this._css.SELECTED_END_DATE);
+			if(selectedEndDateEl){
+				selectedEndDateEl.classList.remove(this._css.SELECTED_END_DATE);
+			}
+			
+			let currentDateEl = this.querySelector('.' + this._css.CURRENT_DATE);
+			if(currentDateEl){
+				currentDateEl.classList.remove(this._css.CURRENT_DATE);
 			}
 		}
 		
@@ -80,19 +109,7 @@
 				let el = rowEl.children[dayOfWeek];
 				el.innerText = dayOfMonth;
 				el.data = {date:dte};
-				el.classList.add('available-cell');
-				
-				if(this._state.selectedStartDate && this._state.selectedStartDate === dayOfMonth){
-					this._selectStartDateEl(el);
-				}
-				
-				if(this._state.selectedEndDate && this._state.selectedEndDate === dayOfMonth){
-					this._selectEndDateEl(el);
-				}
-				
-				if(this._state.currentDate && this._state.currentDate === dayOfMonth){
-					this._selectCurrentDateEl(el);
-				}
+				el.classList.add(this._css.AVAILABLE_CELL);
 				
 				dayOfMonth++;
 				dayOfWeek++;
@@ -115,8 +132,8 @@
 			let lastDateOfMonth = dte.getDaysCount();
 			
 			let tbl = this.querySelector('table');
-			let tableRows = tbl.children[0].children;
-			let firstWeekRow = 1; // row 0 is the header showing the days of the week
+			let tableRows = tbl.querySelector('tbody').children;
+			let firstWeekRow = 0; 
 			let rowCount = 6;
 			
 			this._clearUnavailableDays(dayOfWeek, lastDateOfMonth, tableRows, firstWeekRow);
@@ -133,7 +150,7 @@
 			let clearCell = cell => {
 				cell.data = null;
 				cell.innerText = '';
-				cell.classList.remove('available-cell');				
+				cell.classList.remove(this._css.AVAILABLE_CELL);				
 			};
 			
 			// clear the days that are before the start of the month
@@ -151,144 +168,174 @@
 
 			// clear the days that are after the last day of the month
 			let cellCount = 7 * 6; // days in a week * number of rows in the calendar
-			let lastValidCell = dayOfWeek + lastDateOfMonth;
-			let invalidCellCount = cellCount - lastValidCell;
-			let row = 6; // last row in the calendar
+			let lastAvailableCell = dayOfWeek + lastDateOfMonth;
+			let unavailableCellCount = cellCount - lastAvailableCell;
+			let row = 5; // last row in the calendar
 			let day = DAYS.SAT;
 			
-			while(invalidCellCount > 0){
+			while(unavailableCellCount > 0){
 				clearCell(tableRows[row].children[day]);
 				day = day === DAYS.SUN ? DAYS.MON : day-1;
-				invalidCellCount--;
+				unavailableCellCount--;
 			}
 		}
 		
 		_addEventListeners(){
 			this._boundOnClick = this._onClick.bind(this);
-			let td = this.querySelectorAll('td');
-			td.forEach((el,i) => {
-				if(el.data && el.data.date){
-					el.addEventListener('click', this._boundOnClick);
-				}
-			});
+			this.querySelector('tbody').addEventListener('click', this._boundOnClick);
 		}
-		
-		_selectCurrentDateEl(dateEl){
-			let CURRENT_DATE = 'current-date';
+
+		_selectDate(val){
 			
-			if(this._state.currentDateEl){
-				this._state.currentDateEl.classList.remove(CURRENT_DATE);
-			}
-			
-			dateEl.classList.add(CURRENT_DATE);
-			this._state.currentDateEl = dateEl;
-		}
-		
-		_selectDateEl(dateEl){
-			
-			if(this._state.selectedStartDateEl === null){
+			if(this._state.selectedStartDate === null){
 				
-				this._selectStartDateEl(dateEl);
+				this._selectStartDate(val);
 				
-			} else if(this._state.selectedEndDateEl === null){
+			} else if(this._state.selectedEndDate === null){
 				
-				let startDate = this._state.selectedStartDateEl.data.date;
-				if(startDate > dateEl.data.date){
-					this._selectStartDateEl(dateEl);
+				let startDate = this._state.selectedStartDate;
+				if(startDate > val){
+					this._selectStartDate(val);
 				} else {
-					this._selectEndDateEl(dateEl);
+					this._selectEndDate(val);
 				}
 				
 			} else {
-				
-				this._selectStartDateEl(dateEl);
-				this._selectEndDateEl(null);	
+				this._selectStartDate(val);	
 			}
 			
 		}
 		
-		_selectStartDateEl(dateEl){
-			let SELECTED = 'selected-start-date';
+		_selectStartDate(val){
+						
+			let css = this._css.SELECTED_START_DATE;
 			
-			if(this._state.selectedStartDateEl){
-				this._state.selectedStartDateEl.classList.remove(SELECTED);
+			this._state.selectedStartDate = val;
+			
+			this._selectEndDate(null);
+			
+			let selectedStartDateEl = this.querySelector('.' + css);
+			if(selectedStartDateEl){
+				selectedStartDateEl.classList.remove(css);
 			}
 			
-			dateEl.classList.add(SELECTED);
-			this._state.selectedStartDateEl = dateEl;
+			if(val){
+				let cell = this._whichCellEl(val);
+				cell.classList.add(css);
+			}
 		}
 		
-		_selectEndDateEl(dateEl){
-			let SELECTED = 'selected-end-date';
+		_selectEndDate(val){
+			let css = this._css.SELECTED_END_DATE;
 			
-			if(this._state.selectedEndDateEl){
-				this._state.selectedEndDateEl.classList.remove(SELECTED);
-				this._state.selectedEndDateEl = null;
+			let selectedStartDate = this._state.selectedStartDate;
+			if(val && selectedStartDate && selectedStartDate > val){
+				return; // invalid end date
+			}
+			this._state.selectedEndDate = val;
+			
+			let selectedEndDateEl = this.querySelector('.' + css);
+			if(selectedEndDateEl){
+				selectedEndDateEl.classList.remove(css);
 			}
 			
-			if(dateEl){	
-				dateEl.classList.add(SELECTED);
-				this._state.selectedEndDateEl = dateEl;
+			if(val){
+				let cell = this._whichCellEl(val);
+				cell.classList.add(css);
+			} 
+		}
+		
+		_selectCurrentDate(val){
+			let css = this._css.CURRENT_DATE;
+			
+			this._state.currentDate = val;
+			
+			let currentDateEl = this.querySelector('.' + css);
+			if(currentDateEl){
+				currentDateEl.classList.remove(css);
 			}
+			
+			if(val){
+				let cell = this._whichCellEl(val);
+				cell.classList.add(css);
+			} 
 		}
 		
 		_onClick(evt){
-			this._selectDateEl(evt.target);
+			if(evt.target.data){
+				this._selectDate(evt.target.data.date);
+			}
 		}
 		
 		_removeEventListeners(){
+			this.querySelector('tbody').removeEventListener('click', this._boundOnClick);
+		}
+		
+		_whichTableRow(monthStartsAt, dte){
+			return Math.ceil((monthStartsAt + dte) / 7) - 1; // row index starts at zero
+		}
+		
+		_whichTableCol(monthStartsAt, dte){
+			let col = ((monthStartsAt + dte) % 7) - 1; //column index starts at zero
+			return col < 0 ? DAYS.SAT : col;
+		}
+		
+		_whichCellEl(dte){
+			let monthStartsAt = dte.getFirstDayOfMonth();
+			let d = dte.getDate();
+			let row = this._whichTableRow(monthStartsAt, d);
+			let col = this._whichTableCol(monthStartsAt, d);
+			let tbl = this.querySelector('tbody');
 			
-			let td = this.querySelectorAll('td');
-			td.forEach((el,i) => {
-				
-				if(el.data && el.data.date){
-					el.removeEventListener('click', this._boundOnClick);
-				}
-			});
+			return tbl.children[row].children[col];
 		}
 		
 		//----- public methods
 		
 		// param: {year, month, selectedStartDate, selectedEndDate, currentDate}
-		init(param){
-			
-			this._initState();
-			let year = param.year;
-			let month = param.month;
-			let selectedStartDate = param.selectedStartDate;
-			let selectedEndDate = param.selectedEndDate;
-			let currentDate = param.currentDate;
-			
-			if(year && month){
-				let dte = new Date(year, month, 1, 0, 0, 0, 0);
-				let lastDateOfMonth = dte.getDaysCount();
-				if(selectedStartDate && selectedStartDate > 0 && selectedStartDate <= lastDateOfMonth){
-					this._state.selectedStartDate = selectedStartDate;
-				}
-				
-				if(selectedEndDate && selectedEndDate > 0 && selectedEndDate <= lastDateOfMonth && selectedEndDate > selectedStartDate){
-					this._state.selectedEndDate = selectedEndDate;
-				}
-				
-				if(currentDate && currentDate > 0 && currentDate <= lastDateOfMonth){
-					this._state.currentDate = currentDate;
-				}
-				
-				this._state.year = year;
-				this._state.month = month;
-				
-				this._render();				
-			}
+		init(param){	
+		
+			this._init(param);	
+			this._render();							
 		}
+		
+		
 		
 		//----- getters and setters
 		
+		set month(val){
+			if(MONTHS.JAN <= val && val <= MONTHS.DEC){
+				this._state.month = val;
+				this._render();
+			}
+		}
+		
+		set year(val){
+			let today = new Date();
+			if(val >= today.getFullYear() - 1){
+				this._state.year = val;
+				this._render();
+			}
+		}
+		
+		set startDate(val){
+			this._selectStartDate(val);
+		}
+		
+		set endDate(val){
+			this._selectEndDate(val);
+		}
+		
+		set currentDate(val){
+			this._selectCurrentDate(val);
+		}
+		
 		get selectedStartDate(){
-			return this._state.selectedStartDateEl.data.date;
+			return this._state.selectedStartDate;
 		}
 		
 		get selectedEndDate(){
-			return this._state.selectedEndDateEl.data.date;
+			return this._state.selectedEndDate;
 		}
 		
 	}

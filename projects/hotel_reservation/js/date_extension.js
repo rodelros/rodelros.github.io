@@ -18,3 +18,12 @@ Object.defineProperty(Date.prototype, 'getDaysCount', {
 	,writable: true
 	,configurable: true
 });
+
+Object.defineProperty(Date.prototype, 'getFirstDayOfMonth', {
+	value: function(){
+		let dte = new Date(this.getFullYear(), this.getMonth(), 1);
+		return dte.getDay();
+	}
+	,writable: true
+	,configurable: true
+});
