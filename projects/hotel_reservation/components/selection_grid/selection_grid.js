@@ -45,7 +45,7 @@
 			this._el.content.innerHTML = '';
 			
 			let optionEl = document.createElement('div');
-			optionEl.innerHTML = `<div class="grid-option"></div>`;
+			optionEl.classList.add('grid-option');
 			
 			this._state.options.forEach((opt, i) => {
 				optionEl.innerText = opt;
@@ -54,7 +54,9 @@
 		}
 		
 		_onOptionClick(evt){
-			
+			if(evt.target.classList.contains('grid-option')){
+				// send a custom event
+			}
 		}
 		
 		_addEventListeners(){

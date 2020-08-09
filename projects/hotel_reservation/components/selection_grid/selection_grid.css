@@ -13,8 +13,7 @@
 	align-items: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: --width; // css variable set from the custom element
-	justify-content: space-between;
+	width: 100px;
 }
 
 .selection-grid-previous{
@@ -23,4 +22,8 @@
 
 .selection-grid-next{
 	margin-left: -5px;
+}
+
+.grid-option{
+	padding: 2px 5px;
 }

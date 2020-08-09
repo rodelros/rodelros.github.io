@@ -206,6 +206,10 @@
 			
 		}
 		
+		_byClass(css){
+			return this.querySelector('.' + css);
+		}
+
 		_selectStartDate(val){
 						
 			let css = this._css.SELECTED_START_DATE;
@@ -214,7 +218,7 @@
 			
 			this._selectEndDate(null);
 			
-			let selectedStartDateEl = this.querySelector('.' + css);
+			let selectedStartDateEl = this._byClass(css);
 			if(selectedStartDateEl){
 				selectedStartDateEl.classList.remove(css);
 			}
@@ -234,7 +238,7 @@
 			}
 			this._state.selectedEndDate = val;
 			
-			let selectedEndDateEl = this.querySelector('.' + css);
+			let selectedEndDateEl = this._byClass(css);
 			if(selectedEndDateEl){
 				selectedEndDateEl.classList.remove(css);
 			}
@@ -250,7 +254,7 @@
 			
 			this._state.currentDate = val;
 			
-			let currentDateEl = this.querySelector('.' + css);
+			let currentDateEl = this._byClass(css);
 			if(currentDateEl){
 				currentDateEl.classList.remove(css);
 			}
