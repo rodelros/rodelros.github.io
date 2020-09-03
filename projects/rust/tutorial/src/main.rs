@@ -1,4 +1,7 @@
+#![allow(dead_code)]
+
 fn main() {
+    /*****
     new_function();
     with_params(45, 'H');
     let mut b = with_return();
@@ -6,6 +9,9 @@ fn main() {
     b = false;
     println!("b updated to {}", b);
     control_flow();
+    *****/
+    strings();
+    ownership();
 }
 
 fn new_function() {
@@ -49,4 +55,22 @@ fn control_flow() {
         i += 1;
     };
     println!("found is {}", found);
+}
+
+fn strings() {
+    println!("----- strings -----");
+    let mut str1 = "this is a string";
+    let mut str2 = String::from("another string");
+    println!("{} - {}", str1, str2);
+
+    str1 = "changed it";
+    str2 = "this also".to_string();
+
+    println!("{} - {}", str1, str2);
+
+
+}
+
+fn ownership() {
+    println!("----- ownership -----");
 }
