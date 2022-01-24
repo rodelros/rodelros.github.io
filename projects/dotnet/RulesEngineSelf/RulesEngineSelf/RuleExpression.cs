@@ -3,15 +3,13 @@ using System.Text;
 namespace RulesEngineSelf
 {
     using Operators;
+    using Tokenizer;
 
     public class RuleExpression
     {
         private string _op = string.Empty;
         private string _prop = string.Empty;
         private string _val = string.Empty;
-
-        private string _delimiters = " ";
-        private string _markers = "()";
 
         private Stack<bool> _resultStack = new();
 
@@ -81,54 +79,9 @@ namespace RulesEngineSelf
             return false;
         }
 
-        // This is that function that will be changed depending on the object.
-        // todo: make this a generic function, decoupled from RuleExpression
-        private bool? GetResult(string op, Account account)
+        public bool? IsTrue(IGetResult getResultImpl, ITokenizer tokenizer)
         {
-            bool? result = null;
-
-            var operatorToUse = GetOperatorToUse(op);
-
-            if(operatorToUse != null)
-            {
-                if(_prop == "Amount")
-                {
-                    result = operatorToUse.Evaluate(account.Amount, Convert.ToDecimal(_val));
-                }
-                else if(_prop == "JoinDate")
-                {
-                    result = operatorToUse.Evaluate(account.JoinDate, Convert.ToDateTime(_val));
-                }
-                else if(_prop == "Address")
-                {
-                    result = operatorToUse.Evaluate(account.Address, _val);
-                }
-                else if(_prop == "Age")
-                {
-                    result = operatorToUse.Evaluate(account.Age, Convert.ToInt32(_val));
-                }
-                else if(_prop == "Name")
-                {
-                    result = operatorToUse.Evaluate(account.Name, _val);
-                }
-                else if(_prop == "YearsOfService")
-                {
-                    result = operatorToUse.Evaluate(account.YearsOfService, Convert.ToInt32(_val));
-                }
-            }
-
-            return result;
-        }
-
-        public bool? IsTrue(string expression, Account account)
-        {
-            if(string.IsNullOrEmpty(expression))
-            {
-                return false;
-            }
-
             ResetTerms();
-            var tokenizer = new Tokenizer(expression, _delimiters, _markers);
 
             while(tokenizer.HasNext())
             {
@@ -191,7 +144,7 @@ namespace RulesEngineSelf
 
                 if(ShouldEvaluate())
                 {
-                    _result = GetResult(_op, account);
+                    _result = getResultImpl.GetResult(_op, _prop, _val, GetOperatorToUse(_op));
                     ResetTerms();
 
                     // Evaluate all the saved logical operations.

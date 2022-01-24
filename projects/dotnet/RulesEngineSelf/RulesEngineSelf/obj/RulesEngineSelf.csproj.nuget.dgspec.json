@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/rosfamily/3233-6533/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {}
+    "/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {}
   },
   "projects": {
-    "/media/rosfamily/3233-6533/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {
+    "/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/rosfamily/3233-6533/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
+        "projectUniqueName": "/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
         "projectName": "RulesEngineSelf",
-        "projectPath": "/media/rosfamily/3233-6533/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
+        "projectPath": "/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
         "packagesPath": "/home/rosfamily/.nuget/packages/",
-        "outputPath": "/media/rosfamily/3233-6533/projects/dotnet/RulesEngineSelf/RulesEngineSelf/obj/",
+        "outputPath": "/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rosfamily/.nuget/NuGet/NuGet.Config"

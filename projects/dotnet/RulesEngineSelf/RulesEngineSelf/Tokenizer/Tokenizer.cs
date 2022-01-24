@@ -1,8 +1,8 @@
 using System.Text;
 
-namespace RulesEngineSelf
+namespace RulesEngineSelf.Tokenizer
 {
-    public class Tokenizer
+    public class Tokenizer : ITokenizer
     {
         private int _index = 0;
         private string _expression = string.Empty;
@@ -13,6 +13,7 @@ namespace RulesEngineSelf
         private string _markers = string.Empty;
         private int _end = 0;
 
+        // String in the expression is enclosed in single quotes.
         private char STRING_SINGLE_QUOTE = '\'';
         public Tokenizer(string expression, string delimiters, string markers = "")
         {
