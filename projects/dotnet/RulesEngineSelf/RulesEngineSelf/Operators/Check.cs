@@ -8,7 +8,7 @@ namespace RulesEngineSelf.Operators
             ,Constants.GREATER_THAN
             ,Constants.NOT };
         public static string[] LOGICAL = {
-            Constants.AND
+             Constants.AND
             ,Constants.OR };
 
         public static bool IsComparisonOperator(string term){
