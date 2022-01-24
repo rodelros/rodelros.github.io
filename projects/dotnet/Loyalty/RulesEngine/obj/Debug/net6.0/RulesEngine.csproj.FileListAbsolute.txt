@@ -1,0 +1,12 @@
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/bin/Debug/net6.0/RulesEngine.deps.json
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/bin/Debug/net6.0/RulesEngine.dll
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/bin/Debug/net6.0/ref/RulesEngine.dll
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/bin/Debug/net6.0/RulesEngine.pdb
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.csproj.AssemblyReference.cache
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.GeneratedMSBuildEditorConfig.editorconfig
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.AssemblyInfoInputs.cache
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.AssemblyInfo.cs
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.csproj.CoreCompileInputs.cache
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.dll
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/ref/RulesEngine.dll
+/media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.pdb
