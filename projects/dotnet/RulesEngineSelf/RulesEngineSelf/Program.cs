@@ -6,8 +6,10 @@ using RulesEngineSelf.Tokenizer;
 var account = new Account();
 account.Amount = 50;
 account.Age = 3;
+account.JoinDate = new DateTime(2022, 12, 12);
 
-var expression = "Amount  EQUAL 50 AND (Age EQUAL 3 OR YearsOfService EQUAL 4) AND Address EQUAL 'main street blues'";
+//var expression = "Amount  EQUAL 50 AND (Age EQUAL 3 OR YearsOfService EQUAL 4) AND Address EQUAL 'main street blues' AND JoinedDate GREATER_THAN 2022-10-11";
+var expression = "JoinDate GREATER_THAN 2022-10-11";
 
 string delimiters = " ";
 string markers = "()";
