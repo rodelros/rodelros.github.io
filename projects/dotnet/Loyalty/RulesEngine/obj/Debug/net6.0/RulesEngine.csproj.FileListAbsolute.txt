@@ -10,3 +10,14 @@
 /media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.dll
 /media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/ref/RulesEngine.dll
 /media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/obj/Debug/net6.0/RulesEngine.pdb
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.AssemblyInfoInputs.cache
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.AssemblyInfo.cs
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.csproj.CoreCompileInputs.cache
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\ref\RulesEngine.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\obj\Debug\net6.0\RulesEngine.pdb
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\bin\Debug\net6.0\RulesEngine.deps.json
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\bin\Debug\net6.0\RulesEngine.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\bin\Debug\net6.0\ref\RulesEngine.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\bin\Debug\net6.0\RulesEngine.pdb

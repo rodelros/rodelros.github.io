@@ -12,11 +12,11 @@ namespace RulesEngine
         private string _prop = string.Empty;
         private string _val = string.Empty;
 
-        private Stack<bool> _resultStack = new();
+        private readonly Stack<bool> _resultStack = new();
 
         // This will be used to save logical operations and keep track
         // of the number of new scopes that are processed.
-        private Stack<string> _logicalOperationStack = new();
+        private readonly Stack<string> _logicalOperationStack = new();
 
         private bool? _result = null;
 
@@ -32,7 +32,7 @@ namespace RulesEngine
             return _op != string.Empty && _prop != string.Empty && _val != string.Empty;
         }
 
-        private Dictionary<string, IOperator> _operatorsCache = new();
+        private readonly Dictionary<string, IOperator> _operatorsCache = new();
 
         private IOperator? GetOperatorToUse(string op)
         {
@@ -47,37 +47,24 @@ namespace RulesEngine
 
             };
 
-            switch(op)
+            return op switch
             {
-                case Constants.EQUAL:
-                    return getOperator(op, new Equal());
-
-                case Constants.NOT: 
-                    return getOperator(op, new Not()); 
-
-                case Constants.LESS_THAN:
-                    return getOperator(op, new LessThan());
-
-                case Constants.GREATER_THAN:
-                    return getOperator(op, new GreaterThan());      
-            }
-
-            return null;
-
+                Constants.EQUAL => getOperator(op, new Equal()),
+                Constants.NOT => getOperator(op, new Not()),
+                Constants.LESS_THAN => getOperator(op, new LessThan()),
+                Constants.GREATER_THAN => getOperator(op, new GreaterThan()),
+                _ => null,
+            };
         }
 
-        private bool GetLogicalResult(bool oper1, bool oper2, string op)
+        private static bool GetLogicalResult(bool oper1, bool oper2, string op)
         {
-            switch(op)
+            return op switch
             {
-                case Constants.AND:
-                    return oper1 && oper2;
-
-                case Constants.OR:
-                    return oper1 || oper2;
-            }
-
-            return false;
+                Constants.AND => oper1 && oper2,
+                Constants.OR => oper1 || oper2,
+                _ => false,
+            };
         }
 
         public bool? IsTrue(IGetResult getResultImpl, ITokenizer tokenizer)

@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RulesEngine
-build_property.ProjectDir = /media/rosfamily/3233-6533/rodelros.github.io/projects/dotnet/Loyalty/RulesEngine/
+build_property.ProjectDir = C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesEngine\

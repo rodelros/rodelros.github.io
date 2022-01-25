@@ -1,0 +1,13 @@
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\bin\Debug\net6.0\RulesManager.deps.json
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\bin\Debug\net6.0\RulesManager.runtimeconfig.json
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\bin\Debug\net6.0\RulesManager.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\bin\Debug\net6.0\ref\RulesManager.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\bin\Debug\net6.0\RulesManager.pdb
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.AssemblyInfoInputs.cache
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.AssemblyInfo.cs
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.csproj.CoreCompileInputs.cache
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\ref\RulesManager.dll
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.pdb
+C:\data\tmp\rodelros.github.io\projects\dotnet\Loyalty\RulesManager\obj\Debug\net6.0\RulesManager.genruntimeconfig.cache
