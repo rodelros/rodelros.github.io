@@ -2,29 +2,29 @@
 let dat = [1,2,3,4,5];
 (function(){
 
-    const addSVG = () => {
-        d3.select('body').append('svg')
-        .attr('width', 50).attr('height', 50)
-        .append('circle')
-        .attr('cx', 25).attr('cy', 25).attr('r', 25)
-        .style('fill', 'purple');
-    };
+    var width = 400,
+        height = 100;
 
-    addSVG();
-
-    // Bind the data to the SVG
+    var data = [10, 15, 20, 25, 30];
     
-    const bindData = () => {
-        let sel = d3.select('main').selectAll('p')
-        .data(dat);
+    // Append SVG 
+    var svg = d3.select("body")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
 
-        sel.exit().remove();
+    // Create scale
+    var scale = d3.scaleLinear()
+                  .domain([d3.min(data), d3.max(data)])
+                  .range([0, width - 100]);
 
-        sel.enter()
-        .append('p')
-        .text('hello');
-    }
+    // Add scales to axis
+    var x_axis = d3.axisBottom()
+                   .scale(scale);
 
-    bindData();
+    //Append group and insert axis
+    svg.append("g")
+       .call(x_axis);
 
 })();
+
