@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {}
+    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj": {}
   },
   "projects": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj": {
+    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
-        "projectName": "RulesEngineSelf",
-        "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
+        "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj",
+        "projectName": "scratchpad",
+        "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj",
         "packagesPath": "/home/rodel/.nuget/packages/",
-        "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/obj/",
+        "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/rodel/.nuget/NuGet/NuGet.Config"

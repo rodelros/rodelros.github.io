@@ -1,0 +1,15 @@
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/scratchpad
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/scratchpad.deps.json
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/scratchpad.runtimeconfig.json
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/scratchpad.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/ref/scratchpad.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/bin/Debug/net6.0/scratchpad.pdb
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.csproj.AssemblyReference.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.GeneratedMSBuildEditorConfig.editorconfig
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.AssemblyInfoInputs.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.AssemblyInfo.cs
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.csproj.CoreCompileInputs.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/ref/scratchpad.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.pdb
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/Debug/net6.0/scratchpad.genruntimeconfig.cache
