@@ -2,14 +2,20 @@ namespace RulesEngineSelf.Operators
 {
     public class Check
     {
-        public static string[] COMPARISON = {
+        private static readonly string[] COMPARISON = {
              Constants.EQUAL
             ,Constants.LESS_THAN
             ,Constants.GREATER_THAN
             ,Constants.NOT };
-        public static string[] LOGICAL = {
+
+        private static readonly string[] LOGICAL = {
              Constants.AND
             ,Constants.OR };
+
+        private static readonly string[] STRING = { 
+            Constants.STARTS_WITH
+            ,Constants.CONTAINS
+        };
 
         public static bool IsComparisonOperator(string term){
             return Check.COMPARISON.Contains(term);
@@ -26,6 +32,11 @@ namespace RulesEngineSelf.Operators
         public static bool IsScopeEnd(string term)
         {
             return term == Constants.SCOPE_END;
+        }
+
+        public static bool IsStringOperator(string term)
+        { 
+            return Check.STRING.Contains(term);
         }
     }
 }

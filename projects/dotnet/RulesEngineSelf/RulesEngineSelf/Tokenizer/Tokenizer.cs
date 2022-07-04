@@ -14,7 +14,7 @@ namespace RulesEngineSelf.Tokenizer
         private int _end = 0;
 
         // String in the expression is enclosed in single quotes.
-        private char STRING_SINGLE_QUOTE = '\'';
+        private readonly char STRING_SINGLE_QUOTE = '\'';
         public Tokenizer(string expression, string delimiters, string markers = "")
         {
             _expression = expression;

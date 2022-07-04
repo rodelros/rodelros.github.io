@@ -11,11 +11,11 @@ namespace RulesEngineSelf
         private string _prop = string.Empty;
         private string _val = string.Empty;
 
-        private Stack<bool> _resultStack = new();
+        private readonly Stack<bool> _resultStack = new();
 
         // This will be used to save logical operations and keep track
         // of the number of new scopes that are processed.
-        private Stack<string> _logicalOperationStack = new();
+        private readonly Stack<string> _logicalOperationStack = new();
 
         private bool? _result = null;
 
@@ -31,7 +31,7 @@ namespace RulesEngineSelf
             return _op != string.Empty && _prop != string.Empty && _val != string.Empty;
         }
 
-        private Dictionary<string, IOperator> _operatorsCache = new();
+        private readonly Dictionary<string, IOperator> _operatorsCache = new();
 
         private IOperator? GetOperatorToUse(string op)
         {
@@ -46,34 +46,46 @@ namespace RulesEngineSelf
 
             };
 
-            switch(op)
+            switch (op)
             {
                 case Constants.EQUAL:
                     return getOperator(op, new Equal());
 
-                case Constants.NOT: 
-                    return getOperator(op, new Not()); 
+                case Constants.NOT:
+                    return getOperator(op, new Not());
 
                 case Constants.LESS_THAN:
                     return getOperator(op, new LessThan());
 
                 case Constants.GREATER_THAN:
-                    return getOperator(op, new GreaterThan());      
+                    return getOperator(op, new GreaterThan());
+
+                case Constants.STARTS_WITH:
+                    return getOperator(op, new StringStartsWith());
+
+                case Constants.CONTAINS:
+                    return getOperator(op, new StringContains());
+
+                default:
+                    break;
             }
 
             return null;
 
         }
 
-        private bool GetLogicalResult(bool oper1, bool oper2, string op)
+        private static bool GetLogicalResult(bool oper1, bool oper2, string op)
         {
-            switch(op)
+            switch (op)
             {
                 case Constants.AND:
                     return oper1 && oper2;
 
                 case Constants.OR:
                     return oper1 || oper2;
+
+                default:
+                    break;
             }
 
             return false;
@@ -88,7 +100,7 @@ namespace RulesEngineSelf
 
                 var token = tokenizer.NextToken();
 
-                if(Check.IsComparisonOperator(token))
+                if(Check.IsComparisonOperator(token) || Check.IsStringOperator(token))
                 {
                     _op = token;
                     continue;

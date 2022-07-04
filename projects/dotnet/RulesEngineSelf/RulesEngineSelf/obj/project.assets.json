@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/rodel/.nuget/packages/": {}
+    "C:\\Users\\Rodel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
+      "projectUniqueName": "F:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\RulesEngineSelf.csproj",
       "projectName": "RulesEngineSelf",
-      "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
-      "packagesPath": "/home/rodel/.nuget/packages/",
-      "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/obj/",
+      "projectPath": "F:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\RulesEngineSelf.csproj",
+      "packagesPath": "C:\\Users\\Rodel\\.nuget\\packages\\",
+      "outputPath": "F:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rodel/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Rodel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/bin/dotnet/sdk/6.0.104/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

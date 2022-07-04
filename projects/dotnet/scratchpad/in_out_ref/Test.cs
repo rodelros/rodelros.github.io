@@ -21,6 +21,17 @@ namespace in_out_ref
             
         }
 
+        private static void InStruct(in Entry entry)
+        {
+            // This will fail to compile becase the entry is a struct
+            //entry.Amount = 9;
+        }
+
+        private static void InRecord(in Transaction transaction)
+        {
+            transaction.Name ="changed";
+        }
+
         private static void Display(Account account)
         {
             Console.WriteLine($"Name: {account.Name}");

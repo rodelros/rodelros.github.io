@@ -14,22 +14,24 @@
 </div>
 
 <script>
-
-
+    
 let txtName = document.getElementById('txtName');
 let btnSet = document.getElementById('btnSet');
 btnSet.addEventListener('click', (ev) => {
     testPromise();
 });
 
+
+
 function testPromise(){
     let p1 = new Promise((resolve, reject) => {
         let name = txtName.value;
         alert('p1:' + name);
-        if(name === 'rodel')
-        resolve({name:name})
-        else
+        if(name === 'rodel'){
+        setTimeout(() => {resolve({name:name})}, 5000)
+        } else {
         reject({message:'not the one'});
+        }
     });
 
     p1
@@ -43,6 +45,8 @@ function testPromise(){
     .catch((err) => {
         alert(err.message);
     });
+
+    alert('done.');
 }
 
 

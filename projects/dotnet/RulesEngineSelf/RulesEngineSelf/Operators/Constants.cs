@@ -8,6 +8,8 @@ namespace RulesEngineSelf.Operators
         public const string NOT = "NOT";
         public const string AND = "AND";
         public const string OR = "OR";
+        public const string STARTS_WITH = "STARTS_WITH";
+        public const string CONTAINS = "CONTAINS";
 
         public const string SCOPE_START = "(";
         public const string SCOPE_END = ")";
