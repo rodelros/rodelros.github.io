@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .para {
+            color:blue;
+            font-weight: bold;
+        }
+
+        table {
+            border: 1px solid red;
+        }
+
+        table th {
+            font-weight: bold;
+        }
+
+        table tr th {
+            border: 1px solid lightblue;
+        }
+
+        td {
+            border: 1px dotted lightgray;
+        }
+    </style>
+</head>
+<body>
+    <button id="btnClickMe">Click me</button>
+    <p>
+        <span id="sp">Inside a span in paragraph</span>
+        <div class="para">Inside paragraph</div>
+        <div class="para">Another DIV</div>
+    </p>
+
+    <div>
+        <input type="text" name="AddValue" id="txtValue">
+        <button id="btnAdd">Add</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyEntries"></tbody>
+    </table>
+
+    <script>
+        let d = document;
+        let clickMe = document.getElementById('btnClickMe');
+        clickMe.addEventListener('click', onClick);
+
+
+        function onClick(){
+            let sp = document.getElementById('sp');
+            sp.innerText = "This has been changed."
+        }
+
+        let txtValue = d.getElementById('txtValue');
+        let btnAdd = d.getElementById('btnAdd');
+        let tbodyEntries = d.getElementById('tbodyEntries');
+
+        btnAdd.addEventListener('click', function(evt){
+            let val = txtValue.value;
+            //let row = '<tr id="' + val + '"><td>' + val + '</td><td></td><td></td></tr>';
+            let row = `
+                <tr id="${val}">
+                    <td>${val}</td>
+                    <td></td>
+                    <td></td>
+                </tr>`
+            tbodyEntries.innerHTML += row;
+        });
+
+
+    </script>
+    
+</body>
+</html>
