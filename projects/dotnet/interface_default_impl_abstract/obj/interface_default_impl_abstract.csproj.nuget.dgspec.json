@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj": {}
+  },
+  "projects": {
+    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj",
+        "projectName": "interface_default_impl_abstract",
+        "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj",
+        "packagesPath": "/home/rodel/.nuget/packages/",
+        "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rodel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/home/rodel/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/rodel/.dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

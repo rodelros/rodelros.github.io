@@ -1,18 +1,2 @@
-﻿using System;
-
-namespace dynamic
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-
-        static void TestDynamic()
-        {
-            dynamic obj = new {};
-
-        }
-    }
-}
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");

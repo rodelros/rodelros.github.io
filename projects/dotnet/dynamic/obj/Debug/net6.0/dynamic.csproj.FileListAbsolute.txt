@@ -1,0 +1,15 @@
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/bin/Debug/net6.0/dynamic
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/bin/Debug/net6.0/dynamic.deps.json
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/bin/Debug/net6.0/dynamic.runtimeconfig.json
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/bin/Debug/net6.0/dynamic.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/bin/Debug/net6.0/dynamic.pdb
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.csproj.AssemblyReference.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.GeneratedMSBuildEditorConfig.editorconfig
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.AssemblyInfoInputs.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.AssemblyInfo.cs
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.csproj.CoreCompileInputs.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/refint/dynamic.dll
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.pdb
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/dynamic.genruntimeconfig.cache
+/media/rodel/data_02/rodelros.github.io/projects/dotnet/dynamic/obj/Debug/net6.0/ref/dynamic.dll

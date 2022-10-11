@@ -26,6 +26,7 @@
         "net6.0"
       ],
       "sources": {
+        "/home/rodel/.dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/bin/dotnet/sdk/6.0.104/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/rodel/.dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }
