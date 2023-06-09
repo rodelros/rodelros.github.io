@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const header = (str) => {
+            const len = str.length;
+            let decoration = '';
+            for(let i = 0; i < len; i++){
+                decoration += '=';
+            }
+
+            console.log(`${decoration}\n${str}\n${decoration}`);
+        };
+
+        // Date format should be ISO 8601
+        // e.g. 2022-09-27 18:00:00.000
+
+  const constants = {
+     SINGLE_QUOTE : "'" // string in the expression should be enclosed by single quote
+    ,SCOPE_START: '('
+    ,SCOPE_END: ')'
+  };
+
+  class Tokenizer {
+    
+    #expression;
+    #delimiters; // usually a space
+  	#markers = '';
+    #index = 0;
+  	#end;
+    
+    constructor(expression, delimiters=' ', markers = '()'){
+      
+      this.#expression = expression.trim();
+      this.#delimiters = delimiters;
+      this.#markers = markers.replace(' ','');
+      this.#end = expression.length;
+    }
+    
+    //================
+    // private methods
+    //================
+
+    #currentChar() {
+        return this.#expression[this.#index];
+    }
+
+    #getToken() {
+        const startIndex = this.#index;
+        while(! this.#delimiters.includes(this.#currentChar()) 
+                && this.#index < this.#end){
+                this.#index++;
+        }
+
+        return this.#expression.substring(startIndex, this.#index);
+    }
+
+    #getStringValue() {
+      
+        this.#index++; // move past the starting single quote
+        const startIndex = this.#index;
+      
+        while(this.#currentChar() !== constants.SINGLE_QUOTE
+              && this.#index < this.#end) {
+            this.#index++;
+        }
+      
+        const value = this.#expression.substring(startIndex, this.#index);
+      
+        this.#index++; // move past the ending single quote
+        return value;
+      
+    }
+
+    //===============
+    // public methods
+    //===============
+    
+    reset() {
+      this.#index = 0;
+    }
+    
+    hasNext() {
+        return this.#end > this.#index;
+    }
+    
+    nextToken() {
+      
+      if(this.#index >= this.#end) {
+        return '';
+      }
+      
+      let start = this.#index;
+      
+      while(this.#index < this.#end) {
+        
+        if(this.#currentChar() === constants.SINGLE_QUOTE){
+            return this.#getStringValue(this.#index);
+        }
+
+        if(this.#markers.includes(this.#currentChar())){
+            this.#index++;
+            return this.#expression[this.#index-1];
+        }
+
+        if( ! this.#delimiters.includes(this.#currentChar())){
+            return this.#getToken();
+        }
+
+        this.#index++;
+        
+      }
+      
+    }
+    
+  }
+  
+/*
+let tokenizer = new Tokenizer("Address STARTS_WITH 'Acx' AND ( Name EQUALS 'test')");
+while(tokenizer.hasNext()){
+    console.log(tokenizer.nextToken());
+}
+*/
+/*
+const evaluate = (obj, property, operator, value) => {
+
+    if( ! Object.hasOwn(obj, property)){
+        return false;
+    }
+
+    switch(operator){
+        case 'EQUALS' : return obj[property] === value;
+        case 'NOT' : return obj[property] != value;
+        case 'LESS_THAN' : return obj[property] < value;
+        case 'LESS_THAN_OR_EQUAL': return obj[property] <= value;
+        case 'GREATER_THAN' : return obj[property] > value;
+        case 'GREATER_THAN_OR_EQUAL' : return obj[property] >= value;
+        case 'EARLIER_THAN' : return obj[property] < value;
+        case 'LATER_THAN' : return obj[property] > value;
+        case 'CONTAINS' : return obj[property].includes(value);
+        case 'STARTS_WITH' : return obj[property].startsWith(value);
+        default: return false;
+    }
+
+};
+*/
+
+/*
+const showEval = (obj, property, operator, value) => {
+    let disp = `${property}(${obj[property]}) ${operator} ${value}`;
+    const ret = evaluate(obj, property, operator, value);
+    disp += ` : ${ret}`;
+    console.log(disp);
+};
+
+const obj = {
+     name: 'rodel'
+    ,id: 'rest6453764'
+    ,amount: 45.7
+    ,departureDate: new Date('2023-05-15T05:30:00')
+};
+*/
+/*
+header('evaluate');
+showEval(obj, 'name', 'LIKE', 'rodel');
+showEval(obj, 'name', 'EQUALS', 'rodel');
+showEval(obj, 'name', 'NOT', 'rodel');
+showEval(obj, 'id', 'STARTS_WITH', 'rest');
+showEval(obj, 'id', 'STARTS_WITH', 'ret');
+showEval(obj, 'id', 'CONTAINS', '537');
+showEval(obj, 'id', 'CONTAINS', '111111');
+showEval(obj, 'amount', 'LESS_THAN', 50);
+showEval(obj, 'amount', 'LESS_THAN_OR_EQUAL', 45.7);
+showEval(obj, 'amount', 'LESS_THAN_OR_EQUAL', 45.6);
+showEval(obj, 'amount', 'LESS_THAN_OR_EQUAL', 45.8);
+showEval(obj, 'amount', 'GREATER_THAN_OR_EQUAL', 45.7);
+showEval(obj, 'amount', 'GREATER_THAN_OR_EQUAL', 45.6);
+showEval(obj, 'amount', 'GREATER_THAN_OR_EQUAL', 45.8);
+showEval(obj, 'departureDate', 'EARLIER_THAN', new Date('2023-05-15T05:30:00'));
+showEval(obj, 'departureDate', 'EARLIER_THAN', new Date('2023-05-15T05:30:01'));
+showEval(obj, 'departureDate', 'EARLIER_THAN', new Date('2023-05-15T05:29:59'));
+showEval(obj, 'departureDate', 'LATER_THAN', new Date('2023-05-15T05:30:00'));
+showEval(obj, 'departureDate', 'LATER_THAN', new Date('2023-05-15T05:30:01'));
+showEval(obj, 'departureDate', 'LATER_THAN', new Date('2023-05-15T05:29:59'));
+*/
+
+const padStartNum = (num) => {
+    return num < 10 ? `0${num}` : `${num}`
+};
+
+const operators = {
+     EQUALS: 'EQUALS'
+    ,NOT: 'NOT'
+    ,LESS_THAN: 'LESS_THAN'
+    ,LESS_THAN_OR_EQUAL: 'LESS_THAN_OR_EQUAL'
+    ,GREATER_THAN: 'GREATER_THAN'
+    ,GREATER_THAN_OR_EQUAL: 'GREATER_THAN_OR_EQUAL'
+    ,EARLIER_THAN: 'EARLIER_THAN'
+    ,LATER_THAN: 'LATER_THAN'
+    ,CONTAINS: 'CONTAINS'
+    ,STARTS_WITH: 'STARTS_WITH'
+    ,AND: 'AND'
+    ,OR: 'OR'
+};
+
+class RulesEngine {
+    
+    #operator = '';
+    #property = '';
+    #value = null;
+
+    constructor(tokenizer) {
+
+    }
+
+    //================
+    // private methods
+    //================
+
+    #getPropertyValue(objProperty, value) {
+
+        // Date format should be ISO 8601
+        // e.g. 2022-09-27 18:00:00
+        if(objProperty instanceof Date) {
+
+            // if only the date component is used for validation, the time component of the value parameter
+            // is set to the time component of the objProperty.
+            // e.g. 
+            // objProperty = departureDate, which is '2024-06-12 14:30:25'
+            // rule expression: departureDate LATER_THAN '2024-04-15'
+            //
+            // and the value parameter is '2024-05-03',
+            // the Date value will be set to the time component of departureDate parameter
+
+            if(value.includes('-') && !value.includes(':')) { // validate only the date component
+                let hours = padStartNum(objProperty.getHours());
+                let minutes = padStartNum(objProperty.getMinutes());
+                let seconds = padStartNum(objProperty.getSeconds());
+
+                value = `${value} ${hours}:${minutes}:${seconds}`;
+            }
+            else if(!value.includes('-') && value.includes(':')) { //validate only the time components
+                let year = objProperty.getFullYear();
+                let month = padStartNum(objProperty.getMonth());
+                let date = padStartNum(objProperty.getDate());
+
+                value = `${year}-${month}-${date} ${value}`;
+            }
+
+            return new Date(value);
+        } 
+
+        if(typeof objProperty === 'boolean') return value.toLowerCase() === 'true';
+
+        if(typeof objProperty === 'number') return value.includes('.') ? parseFloat(value, 10) : parseInt(value, 10);
+        
+    }
+
+    #evaluateTerm = (obj, property, operator, value) => {
+
+        if( ! Object.hasOwn(obj, property)){
+            return false;
+        }
+
+        // change the value data type based on the data type of the object property
+        value = this.#getPropertyValue(obj[property], value);
+
+        switch(operator){
+            case operators.EQUALS : return obj[property] === value;
+            case operators.NOT : return obj[property] != value;
+            case operators.LESS_THAN : return obj[property] < value;
+            case operators.LESS_THAN_OR_EQUAL: return obj[property] <= value;
+            case operators.GREATER_THAN : return obj[property] > value;
+            case operators.GREATER_THAN_OR_EQUAL : return obj[property] >= value;
+            case operators.EARLIER_THAN : return obj[property] < value;
+            case operators.LATER_THAN : return obj[property] > value;
+            case operators.CONTAINS : return obj[property].includes(value);
+            case operators.STARTS_WITH : return obj[property].startsWith(value);
+            default: return false;
+        }
+
+    }
+
+    #shouldEvaluate() {
+        return this.#operator !=='' 
+            && this.#property !=='' 
+            && this.#value !== null;
+    }
+
+    #isPropertyOperator(token) {
+        return token === operators.EQUALS
+            || token === operators.NOT
+            || token === operators.EARLIER_THAN
+            || token === operators.LATER_THAN
+            || token === operators.LESS_THAN
+            || token === operators.LESS_THAN_OR_EQUAL
+            || token === operators.GREATER_THAN
+            || token === operators.GREATER_THAN_OR_EQUAL
+            || token === operators.CONTAINS
+            || token === operators.STARTS_WITH;
+    }
+
+    #isLogicalOperator(token) {
+        return token === operators.AND || token === operators.OR;
+    }
+
+    #isScopeStart(token) {
+        return token === constants.SCOPE_START;
+    }
+
+    #isScopeEnd(token) {
+        return token === constants.SCOPE_END;
+    }
+
+    #getLogicalResult(oper1, oper2, op)
+        {
+            switch (op)
+            {
+                case Constants.AND:
+                    return oper1 && oper2;
+
+                case Constants.OR:
+                    return oper1 || oper2;
+
+                default:
+                    break;
+            }
+
+            return false;
+        }
+
+    #reset(){
+        this.#operator = '';
+        this.#property = '';
+        this.#value = null;
+    }
+
+    //===============
+    // public methods
+    //===============
+
+    evaluate(obj){
+
+        let result = null;
+        let resultStack = [];
+        let logicalOperationStack = [];
+
+        this.#reset();
+
+        let token = '';
+        while(tokenizer.hasNext()) {
+
+            token = tokenizer.nextToken();
+
+            if(this.#isPropertyOperator(token)) {
+                this.#operator = token;
+                continue;
+            }
+
+            if(this.#isLogicalOperator(token)) {
+                if(result !== null) {
+                    resultStack.push(result);
+                    logicalOperationStack.push(token);
+                    result = null;
+                    this.#reset();
+                }
+                continue;
+            }
+
+            if(this.#isScopeStart(token)) {
+                if(result !== null) {
+                    resultStack.push(result);
+                    result = null;
+                    this.#reset();
+                }
+
+                logicalOperationStack.push(token);
+                continue;
+            }
+
+            if(this.#isScopeEnd(token)) {
+                if(logicalOperationStack.length > 0 && result !== null) {
+                    const stackItem = logicalOperationStack.pop();
+                    if(stackItem !== constants.SCOPE_START) {
+                        throw new Error('Invalid Expression');
+                    }
+
+                    continue;
+                }
+            }
+
+            if(this.#operator !== '') {
+                this.#value = token;
+            } 
+            else {
+                this.#property = token;
+            } 
+
+            if(this.#shouldEvaluate()) {
+
+                result = this.#evaluateTerm(obj, this.#property, this.#operator, this.#value);
+                this.#reset();
+
+                let logicalOp;
+                let previousResult;
+
+                // Evaluate all the saved logical operations.
+                // Stop when the SCOPE_START is reached, only the SCOPE_END block will evaluate and pop 
+                // the SCOPE_START.
+                while(logicalOperationStack.length > 0 
+                && result != null 
+                && logicalOperationStack[logicalOperationStack.length - 1] != constants.SCOPE_START)
+                {
+                    logicalOp = logicalOperationStack.pop();
+                    previousResult = resultStack.pop();
+                    result = this.#getLogicalResult(result, previousResult, logicalOp);
+                }                
+            }
+        }// while
+
+        return result;
+    }
+
+    
+}
+
+/**/
+header('rulesengine');
+const tokenizer = new Tokenizer("departureDate LATER_THAN '2023-05-06' ");
+let rulesengine = new RulesEngine(tokenizer);
+
+const obj = {
+     name: 'rodel'
+    ,id: 'rest6453764'
+    ,amount: 45.7
+    ,departureDate: new Date('2023-05-07 18:00:00.000')
+};
+
+let result = rulesengine.evaluate(obj);
+console.debug(`result = ${result}`);
+/**/
+
+    </script>
+</body>
+</html>
