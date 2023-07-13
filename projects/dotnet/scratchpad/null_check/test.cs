@@ -9,7 +9,7 @@ public static class Test
         var department = new Department();
 
         
-        var streetNumber = department?.Account?.Address.Number;
+        var streetNumber = department?.Account?.Address?.Number;
 
         Console.WriteLine($"street number is {streetNumber} ");
         CallNum(streetNumber);

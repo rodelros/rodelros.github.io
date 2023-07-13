@@ -1,17 +1,17 @@
 #![allow(dead_code)]
 
 fn main() {
-    /*****
-    new_function();
-    with_params(45, 'H');
-    let mut b = with_return();
-    println!("return value is {}", b);
-    b = false;
-    println!("b updated to {}", b);
+    
+    //new_function();
+    //with_params(45, 'H');
+    //let mut b = with_return();
+    //println!("return value is {}", b);
+    //b = false;
+    //println!("b updated to {}", b);
     control_flow();
-    *****/
-    strings();
-    ownership();
+    
+    //strings();
+    //ownership();
 }
 
 fn new_function() {

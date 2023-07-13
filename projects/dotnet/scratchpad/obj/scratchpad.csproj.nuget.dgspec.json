@@ -1,31 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj": {}
+    "C:\\rodelros.github.io\\projects\\dotnet\\scratchpad\\scratchpad.csproj": {}
   },
   "projects": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj": {
+    "C:\\rodelros.github.io\\projects\\dotnet\\scratchpad\\scratchpad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj",
+        "projectUniqueName": "C:\\rodelros.github.io\\projects\\dotnet\\scratchpad\\scratchpad.csproj",
         "projectName": "scratchpad",
-        "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/scratchpad.csproj",
-        "packagesPath": "/home/rodel/.nuget/packages/",
-        "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/scratchpad/obj/",
+        "projectPath": "C:\\rodelros.github.io\\projects\\dotnet\\scratchpad\\scratchpad.csproj",
+        "packagesPath": "C:\\Users\\BCS-RROS\\.nuget\\packages\\",
+        "outputPath": "C:\\rodelros.github.io\\projects\\dotnet\\scratchpad\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/rodel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\BCS-RROS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
-          "/home/rodel/.dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -36,15 +43,16 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -53,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/rodel/.dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
