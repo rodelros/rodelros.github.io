@@ -50,8 +50,7 @@ public static class Test
     {
         var data = new Data{Id = 1, Name = "test", Description = "test", Role = Role.Admin, Ignore = 1};
 
-        DefaultJsonTypeInfoResolver typeInfoResolver = new();
-        typeInfoResolver.Modifiers.Add((jsonTypeInfo) => 
+        var modifier = (JsonTypeInfo jsonTypeInfo) => 
         {
             if (jsonTypeInfo.Type != typeof(Data))
             {
@@ -66,7 +65,10 @@ public static class Test
                     jsonPropertyInfo.ShouldSerialize = static (obj, value) => false;
                 }
             }
-        });
+        };
+
+        DefaultJsonTypeInfoResolver typeInfoResolver = new();
+        typeInfoResolver.Modifiers.Add(modifier);
 
         var options = new JsonSerializerOptions
         {

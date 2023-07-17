@@ -1,0 +1,15 @@
+C:\data\dotnet_projects\Scratchpad\Scratchpad\bin\Debug\net6.0\Scratchpad.exe
+C:\data\dotnet_projects\Scratchpad\Scratchpad\bin\Debug\net6.0\Scratchpad.deps.json
+C:\data\dotnet_projects\Scratchpad\Scratchpad\bin\Debug\net6.0\Scratchpad.runtimeconfig.json
+C:\data\dotnet_projects\Scratchpad\Scratchpad\bin\Debug\net6.0\Scratchpad.dll
+C:\data\dotnet_projects\Scratchpad\Scratchpad\bin\Debug\net6.0\Scratchpad.pdb
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.csproj.AssemblyReference.cache
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.GeneratedMSBuildEditorConfig.editorconfig
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.AssemblyInfoInputs.cache
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.AssemblyInfo.cs
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.csproj.CoreCompileInputs.cache
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.dll
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\refint\Scratchpad.dll
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.pdb
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\Scratchpad.genruntimeconfig.cache
+C:\data\dotnet_projects\Scratchpad\Scratchpad\obj\Debug\net6.0\ref\Scratchpad.dll
