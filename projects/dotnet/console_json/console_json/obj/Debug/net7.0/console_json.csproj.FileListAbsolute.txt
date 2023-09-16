@@ -1,0 +1,15 @@
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\bin\Debug\net7.0\console_json.exe
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\bin\Debug\net7.0\console_json.deps.json
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\bin\Debug\net7.0\console_json.runtimeconfig.json
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\bin\Debug\net7.0\console_json.dll
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\bin\Debug\net7.0\console_json.pdb
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.csproj.AssemblyReference.cache
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.GeneratedMSBuildEditorConfig.editorconfig
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.AssemblyInfoInputs.cache
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.AssemblyInfo.cs
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.csproj.CoreCompileInputs.cache
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.dll
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\refint\console_json.dll
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.pdb
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\console_json.genruntimeconfig.cache
+F:\rodelros.github.io\projects\dotnet\console_json\console_json\obj\Debug\net7.0\ref\console_json.dll

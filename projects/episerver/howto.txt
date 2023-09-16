@@ -1,0 +1,21 @@
+1. Download SQL Server docker image.
+	docker pull mcr.microsoft.com/mssql/server:2019-latest
+	sql server tags list: https://mcr.microsoft.com/v2/mssql/server/tags/list
+
+2. Create a container	
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=password' -p 1433:1433 -d <image id> --name mssql_episerver
+
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=1234qwerASDF' -p 1433:1433 --name mssql_episerver -d 4885f6112d74
+
+2.1. Connect to the DB server to check using a DB client, i.e. via DBeaver.
+
+3. Create an empty episerver cms project
+dotnet new epi-cms-empty --name cms12 --force
+
+4. Create cms database
+dotnet-episerver create-cms-database -S localhost -U sa -P 1234qwerASDF -dn EpiserverDB_exampleproject -du EpiserverDB_exampleUser -dp episerver1234ASDF cms12.csproj
+
+4.1. Check DB client to see that the DB has been created.
+
+5. Create an admin user.
+dotnet-episerver add-admin-user -u admin -e admin@example.com -p admin1234ASDF -c EPiServerDB cms12.csproj

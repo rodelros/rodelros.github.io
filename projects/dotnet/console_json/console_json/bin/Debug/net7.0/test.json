@@ -1,0 +1,19 @@
+﻿{
+  "data": {
+    "booking": {
+      "addOns": [
+        {
+          "addOn": {
+            "addOnKey": "MCEwITB8MTMxMzg5NSFhNTAzYzlkNi02OGMwLTQzMmQtOGNkYy1jNDFmYTc4ODFmNTghMCFmYWxzZSEw",
+            "paymentRequired": true,
+            "status": "Pending",
+            "type": "Hotel"
+          }
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "documentation_url": "http://developer.navitaire.com/documentation/dotrezapi/graphcontrollerv2"
+  }
+}

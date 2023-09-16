@@ -10,8 +10,8 @@ account.JoinDate = new DateTime(2022, 12, 12);
 account.Address = "Abercrombie";
 
 //var expression = "Amount  EQUAL 50 AND (Age EQUAL 3 OR YearsOfService EQUAL 4) AND Address EQUAL 'main street blues' AND JoinedDate GREATER_THAN 2022-10-11";
-//var expression = "JoinDate GREATER_THAN 2022-10-11";
-var expression = "Address STARTS_WITH 'Acx'";
+var expression = "JoinDate EQUAL 2022-12-12 OR JoinDate GREATER_THAN 2022-10-11";
+//var expression = "Address STARTS_WITH 'Acx'";
 
 string delimiters = " ";
 string markers = "()";

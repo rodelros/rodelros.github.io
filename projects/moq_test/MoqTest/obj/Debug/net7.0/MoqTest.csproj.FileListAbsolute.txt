@@ -1,0 +1,15 @@
+F:\rodelros.github.io\projects\moq_test\MoqTest\bin\Debug\net7.0\MoqTest.exe
+F:\rodelros.github.io\projects\moq_test\MoqTest\bin\Debug\net7.0\MoqTest.deps.json
+F:\rodelros.github.io\projects\moq_test\MoqTest\bin\Debug\net7.0\MoqTest.runtimeconfig.json
+F:\rodelros.github.io\projects\moq_test\MoqTest\bin\Debug\net7.0\MoqTest.dll
+F:\rodelros.github.io\projects\moq_test\MoqTest\bin\Debug\net7.0\MoqTest.pdb
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.csproj.AssemblyReference.cache
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.GeneratedMSBuildEditorConfig.editorconfig
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.AssemblyInfoInputs.cache
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.AssemblyInfo.cs
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.csproj.CoreCompileInputs.cache
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.dll
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\refint\MoqTest.dll
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.pdb
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\MoqTest.genruntimeconfig.cache
+F:\rodelros.github.io\projects\moq_test\MoqTest\obj\Debug\net7.0\ref\MoqTest.dll
