@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj": {}
+    "d:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj": {}
   },
   "projects": {
-    "F:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj": {
+    "d:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj",
+        "projectUniqueName": "d:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj",
         "projectName": "console_json",
-        "projectPath": "F:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj",
-        "packagesPath": "C:\\Users\\Rodel\\.nuget\\packages\\",
-        "outputPath": "F:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\obj\\",
+        "projectPath": "d:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\console_json.csproj",
+        "packagesPath": "C:\\Users\\rodel\\.nuget\\packages\\",
+        "outputPath": "d:\\rodelros.github.io\\projects\\dotnet\\console_json\\console_json\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rodel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rodel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
