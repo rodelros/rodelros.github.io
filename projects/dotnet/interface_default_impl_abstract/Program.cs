@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 
 var employee = new Employee();
 employee.FirstName = "Juan";
@@ -7,3 +7,7 @@ Console.WriteLine(employee.FullName());
 
 var manager = new Manager();
 Console.WriteLine(manager.Greet());
+
+Action<IManager, int> GetApprovalStatus = (mngr, leaveCount)=> Console.WriteLine(mngr.IsApproved(leaveCount));
+GetApprovalStatus(manager, 5);
+
