@@ -2,7 +2,6 @@
 
 namespace fp;
 
-
 public static class CalculateRisk
 {
     internal readonly struct Age

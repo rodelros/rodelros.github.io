@@ -50,4 +50,9 @@ Delegates.Run();
 Closure.Run();
 BMI.Run();
 *****/
-CalculateRisk.Run();
+//CalculateRisk.Run();
+//Records.Run();
+//PatternMatching.Run();
+//MapForEach.Run();
+//MethodChaining.Run();
+IEnumerableAsOption.Run();
