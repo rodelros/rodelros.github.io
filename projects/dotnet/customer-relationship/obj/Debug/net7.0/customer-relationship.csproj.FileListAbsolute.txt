@@ -1,0 +1,14 @@
+D:\rodelros.github.io\projects\dotnet\customer-relationship\bin\Debug\net7.0\customer-relationship.exe
+D:\rodelros.github.io\projects\dotnet\customer-relationship\bin\Debug\net7.0\customer-relationship.deps.json
+D:\rodelros.github.io\projects\dotnet\customer-relationship\bin\Debug\net7.0\customer-relationship.runtimeconfig.json
+D:\rodelros.github.io\projects\dotnet\customer-relationship\bin\Debug\net7.0\customer-relationship.dll
+D:\rodelros.github.io\projects\dotnet\customer-relationship\bin\Debug\net7.0\customer-relationship.pdb
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.GeneratedMSBuildEditorConfig.editorconfig
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.AssemblyInfoInputs.cache
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.AssemblyInfo.cs
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.csproj.CoreCompileInputs.cache
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.dll
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\refint\customer-relationship.dll
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.pdb
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\customer-relationship.genruntimeconfig.cache
+D:\rodelros.github.io\projects\dotnet\customer-relationship\obj\Debug\net7.0\ref\customer-relationship.dll

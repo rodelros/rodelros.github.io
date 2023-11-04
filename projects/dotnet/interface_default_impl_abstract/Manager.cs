@@ -1,3 +1,5 @@
+using System.Data.SqlTypes;
+
 public class Manager: IManager, IPerson
 {
     public int UnusedLeaves()
@@ -5,9 +7,4 @@ public class Manager: IManager, IPerson
         return 5;
     }
 
-
-    public string Greet()
-    {
-        return "Hello";
-    }
 }

@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj": {}
+    "D:\\rodelros.github.io\\projects\\dotnet\\interface_default_impl_abstract\\interface_default_impl_abstract.csproj": {}
   },
   "projects": {
-    "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj": {
+    "D:\\rodelros.github.io\\projects\\dotnet\\interface_default_impl_abstract\\interface_default_impl_abstract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj",
+        "projectUniqueName": "D:\\rodelros.github.io\\projects\\dotnet\\interface_default_impl_abstract\\interface_default_impl_abstract.csproj",
         "projectName": "interface_default_impl_abstract",
-        "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/interface_default_impl_abstract.csproj",
-        "packagesPath": "/home/rodel/.nuget/packages/",
-        "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/obj/",
+        "projectPath": "D:\\rodelros.github.io\\projects\\dotnet\\interface_default_impl_abstract\\interface_default_impl_abstract.csproj",
+        "packagesPath": "C:\\Users\\rodel\\.nuget\\packages\\",
+        "outputPath": "D:\\rodelros.github.io\\projects\\dotnet\\interface_default_impl_abstract\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rodel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\rodel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/home/rodel/.dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -53,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/rodel/.dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

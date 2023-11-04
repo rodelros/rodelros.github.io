@@ -9,9 +9,9 @@ namespace RulesEngineSelf.Tokenizer
         private string _delimiters = string.Empty;
 
         // Markers are special characters that are returned as tokens.
-        // ex. ( and ) are markers. They can be used to define inner scope of the expression. 
+        // ex. '(' and ')' are markers. They can be used to define inner scope of the expression. 
         private string _markers = string.Empty;
-        private int _end = 0;
+        private readonly int _end = 0;
 
         // String in the expression is enclosed in single quotes.
         private readonly char STRING_SINGLE_QUOTE = '\'';

@@ -1,36 +1,38 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net7.0": []
   },
   "packageFolders": {
-    "/home/rodel/.nuget/packages/": {}
+    "C:\\Users\\rodel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
+      "projectUniqueName": "D:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\RulesEngineSelf.csproj",
       "projectName": "RulesEngineSelf",
-      "projectPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/RulesEngineSelf.csproj",
-      "packagesPath": "/home/rodel/.nuget/packages/",
-      "outputPath": "/media/rodel/data_02/rodelros.github.io/projects/dotnet/RulesEngineSelf/RulesEngineSelf/obj/",
+      "projectPath": "D:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\RulesEngineSelf.csproj",
+      "packagesPath": "C:\\Users\\rodel\\.nuget\\packages\\",
+      "outputPath": "D:\\rodelros.github.io\\projects\\dotnet\\RulesEngineSelf\\RulesEngineSelf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rodel/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\rodel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -41,15 +43,16 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

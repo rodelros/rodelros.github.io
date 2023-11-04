@@ -6,4 +6,7 @@ employee.LastName = "Pedro";
 Console.WriteLine(employee.FullName());
 
 var manager = new Manager();
-Console.WriteLine(manager.Greet());
+
+var person = manager as IPerson;
+person.Greet();
+

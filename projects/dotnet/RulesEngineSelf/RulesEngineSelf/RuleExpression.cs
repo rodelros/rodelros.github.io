@@ -35,16 +35,18 @@ namespace RulesEngineSelf
 
         private IOperator? GetOperatorToUse(string op)
         {
-            var getOperator = (string oper, IOperator impl) => {
 
-                if( ! _operatorsCache.ContainsKey(oper))
+            IOperator getOperator(string oper, IOperator impl)
+            {
+
+                if (!_operatorsCache.ContainsKey(oper))
                 {
                     _operatorsCache[oper] = impl;
                 }
 
                 return _operatorsCache[oper];
 
-            };
+            }
 
             switch (op)
             {

@@ -13,3 +13,17 @@
 /media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/obj/Debug/net6.0/interface_default_impl_abstract.pdb
 /media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/obj/Debug/net6.0/interface_default_impl_abstract.genruntimeconfig.cache
 /media/rodel/data_02/rodelros.github.io/projects/dotnet/interface_default_impl_abstract/obj/Debug/net6.0/ref/interface_default_impl_abstract.dll
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\bin\Debug\net6.0\interface_default_impl_abstract.exe
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\bin\Debug\net6.0\interface_default_impl_abstract.deps.json
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\bin\Debug\net6.0\interface_default_impl_abstract.runtimeconfig.json
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\bin\Debug\net6.0\interface_default_impl_abstract.dll
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\bin\Debug\net6.0\interface_default_impl_abstract.pdb
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.GeneratedMSBuildEditorConfig.editorconfig
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.AssemblyInfoInputs.cache
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.AssemblyInfo.cs
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.csproj.CoreCompileInputs.cache
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.dll
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\refint\interface_default_impl_abstract.dll
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.pdb
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\interface_default_impl_abstract.genruntimeconfig.cache
+D:\rodelros.github.io\projects\dotnet\interface_default_impl_abstract\obj\Debug\net6.0\ref\interface_default_impl_abstract.dll

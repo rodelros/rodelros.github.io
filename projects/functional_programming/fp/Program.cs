@@ -56,3 +56,9 @@ BMI.Run();
 //MapForEach.Run();
 //MethodChaining.Run();
 IEnumerableAsOption.Run();
+
+Func<int,bool> IsEven = num => num % 2 == 0;
+static bool IsEvenV2(int num) => num % 2 == 0;
+
+Console.WriteLine($"Is 4 an even number? {IsEven(4)}");
+Console.WriteLine($"Is 5 an even number? {IsEvenV2(5)}");

@@ -1,4 +1,8 @@
 public interface IPerson
 {
-    string Greet();
+    string Greet() 
+    {
+        return "\nHello from IPerson.";
+    }
+
 }
