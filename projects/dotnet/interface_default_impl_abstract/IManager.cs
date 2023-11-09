@@ -1,3 +1,5 @@
+namespace DefaultImpl;
+
 public interface IManager
 {
     int UnusedLeaves();
@@ -5,4 +7,6 @@ public interface IManager
     {
         return leaveCount > 0;
     }
+
+    void ShowId() => Console.WriteLine("IManager Id");
 }

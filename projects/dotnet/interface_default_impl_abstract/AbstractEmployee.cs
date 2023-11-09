@@ -1,3 +1,5 @@
+namespace DefaultImpl;
+
 public abstract class AbstractEmployee
 {
     public string FirstName {get; set;} = string.Empty;
