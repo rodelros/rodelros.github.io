@@ -30,7 +30,9 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", (ILogger<Program> logger) =>
 {
-    logger.FailedToProcess(new Exception("Failed to process."));
+    //logger.FailedToProcess(new Exception("Failed to process."));
+    logger.LogOperationReceipt(new LoggableOperationReceipt{LogDetail = "LogDetail", LogMessage = "LogMessage"}, LogLevel.Information);
+    
     var forecast =  Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
