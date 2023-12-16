@@ -1,0 +1,14 @@
+D:\rodelros.github.io\projects\dotnet\pattern_matching\bin\Debug\net7.0\pattern_matching.exe
+D:\rodelros.github.io\projects\dotnet\pattern_matching\bin\Debug\net7.0\pattern_matching.deps.json
+D:\rodelros.github.io\projects\dotnet\pattern_matching\bin\Debug\net7.0\pattern_matching.runtimeconfig.json
+D:\rodelros.github.io\projects\dotnet\pattern_matching\bin\Debug\net7.0\pattern_matching.dll
+D:\rodelros.github.io\projects\dotnet\pattern_matching\bin\Debug\net7.0\pattern_matching.pdb
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.GeneratedMSBuildEditorConfig.editorconfig
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.AssemblyInfoInputs.cache
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.AssemblyInfo.cs
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.csproj.CoreCompileInputs.cache
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.dll
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\refint\pattern_matching.dll
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.pdb
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\pattern_matching.genruntimeconfig.cache
+D:\rodelros.github.io\projects\dotnet\pattern_matching\obj\Debug\net7.0\ref\pattern_matching.dll
