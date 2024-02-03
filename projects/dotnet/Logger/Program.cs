@@ -1,3 +1,5 @@
+using LoggerMessage;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +21,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.SetEndpoints();
 
 var summaries = new[]
 {
