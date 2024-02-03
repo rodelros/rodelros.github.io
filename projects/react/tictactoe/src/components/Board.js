@@ -39,6 +39,10 @@ export default function Board() {
         nextCells[index] = player.current;
         setCells(nextCells);
         const winner = getWinner(nextCells);
+
+        // get the key
+        console.log(el.key?.value);
+
         if(winner){
             console.log(`${winner} wins!`);
         }
