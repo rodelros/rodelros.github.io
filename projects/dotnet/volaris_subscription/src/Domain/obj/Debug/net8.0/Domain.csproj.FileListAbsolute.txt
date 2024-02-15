@@ -1,0 +1,12 @@
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\bin\Debug\net8.0\Domain.dll
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\bin\Debug\net8.0\Domain.pdb
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.dll
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\Domain.pdb
+C:\rodelros.github.io\projects\dotnet\volaris_subscription\src\Domain\obj\Debug\net8.0\ref\Domain.dll
