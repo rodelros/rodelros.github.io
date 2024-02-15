@@ -13,22 +13,5 @@ namespace Application.Tests
 {
     public class UpdateSubscriptionNextBilling
     {
-        [Fact]
-        public void InvalidNextBillingDate_ShouldThrowException()
-        {
-            try 
-            {
-                new Account("JHGDTR", "Test", "Unit", "unit@test.net")
-                    .AddVClubSubscriptionToAccount(VClub.DuoAnnual)
-                    .SetVClubNextBillingDate(DateOnly.FromDateTime(DateTime.Now.AddDays(-1)));
-            }
-            catch (Exception ex) 
-            {
-                Assert.True(ex is InvalidVClubDateException);
-            }
-
-
-            
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using API.Requests;
 using Application.ExternalInterfaces;
 using Application.UseCases.AddNewSubscriptionToAccount;
+using Application.UseCases.UpdateSubscriptionNextBillingDate;
 using Domain.Enums;
 using Domain.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -14,6 +15,7 @@ namespace API
         {
             app.MapGet("/account/{email}", GetAccount);
             app.MapPost("/account/vclub/", AddVclubSubscription);
+            app.MapPut("/account/nextbillingdate", UpdateNextBillingDate);
         }
 
         public static Results<Ok<Account>, NotFound> GetAccount(string email, IAccountService accountService)
@@ -37,6 +39,17 @@ namespace API
             }
             return TypedResults.BadRequest();
 
+        }
+
+        public static Results<Ok<Account>, NotFound> UpdateNextBillingDate(NextBillingDateRequest request, IAccountService accountService)
+        {
+            var account = accountService.GetAccount(request.Email);
+            if (account == null) 
+            {
+                return TypedResults.NotFound(); 
+            }
+
+            return TypedResults.Ok(account);
         }
     }
 }
