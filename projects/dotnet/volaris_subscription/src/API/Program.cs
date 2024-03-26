@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure();
-
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 var app = builder.Build();
 
@@ -25,16 +25,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapAccountEndpoints();
-/*
-app.MapGet("/account/{email}", (string email, IAccountService accountService) => 
-{
-    var account = accountService.GetAccount(email);
-    
-    return account == null ? TypedResults.NotFound() : Results.Ok(account);
-})
-.WithName("GetAccount")
-.WithOpenApi();
-*/
-
+app.UseExceptionHandler(_ => { });
 
 app.Run();

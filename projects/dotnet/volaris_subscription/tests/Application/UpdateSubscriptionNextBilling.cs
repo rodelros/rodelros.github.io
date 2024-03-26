@@ -1,6 +1,5 @@
 ﻿using Domain.Models;
-using Application.UseCases.AddNewSubscriptionToAccount;
-using Application.UseCases.UpdateSubscriptionNextBillingDate;
+using Application.UseCases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
