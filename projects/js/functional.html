@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Class basics</title>
+
+    </head>
+    <body>
+
+        
+    <script>
+    "use strict";
+
+    class Doer{
+        #name;
+
+        constructor(name){
+            this.#name = name;
+        }
+
+        suffixed(suffix){
+            this.#name += suffix;
+            return this.#name;
+        }
+
+    }
+
+    var adder = (suffix) => 'do ' + suffix;
+
+    var caller = (func) => {
+        console.log(func('it'));
+    };
+
+    caller(adder);
+    
+    let doer = new Doer('bring');
+    caller(doer.suffixed.bind(doer));
+
+    
+
+
+
+    </script>    
+    </body>
+
+
+</html>

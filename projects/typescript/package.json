@@ -6,6 +6,6 @@
   "scripts": {
     "clean": "rimraf js/",
     "build": "tsc --project ./ts/tsconfig.json",
-    "start": "npm run clean && npm run build && npx local-web-server"
+    "start": "npm run clean && npm run build && npx ws"
   }
 }
