@@ -12,14 +12,16 @@
 
 	<script>
 		'use strict';
-				
+		
+		const info = 'Hello, World!';
 		const itemTemplate = document.createElement('template');
 		itemTemplate.innerHTML = `
 		<div>
 			${info}
 		</div>`;
 
-		document.getElementById('display').appendChild(itemTemplate.content.cloneNode(true));		
+		document.getElementById('display')
+			.appendChild(itemTemplate.content.cloneNode(true));		
 		
 	</script>
     </body>

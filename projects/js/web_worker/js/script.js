@@ -11,7 +11,7 @@
             }
             
             setEvents();
-            console.log(document.domain);
+            //console.log(document.domain);
 
         } else {
             console.log('Web worker not supported.');
