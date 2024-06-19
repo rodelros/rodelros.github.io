@@ -1,4 +1,6 @@
 
+import styles from './Header.module.css';
+
 const Logo = () => {
     return (
         <svg width="150" height="100%" /*class="logo-img"*/ viewBox="0 0 512 224" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,12 +25,8 @@ const Logo = () => {
 
 export default function Header() {
 
-    const style = {
-        backgroundColor: "#212529",
-    };
-
     return (
-        <header style={style}>
+        <header>
             <Logo />
         </header>
     );
