@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header/header";
-import { GoogleTagManager } from '@next/third-parties/google' 
+import { GoogleTagManager } from '@next/third-parties/google';
+
 
 
 export const metadata: Metadata = {
@@ -24,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={averta.className}>
-      <GoogleTagManager gtmId="GTM-NZPX55P" />
       
+      <GoogleTagManager gtmId="GTM-NZPX55P" />
+
       <head>
         <link rel="icon" href="favicon.png" type="image/x-icon" />
       </head>

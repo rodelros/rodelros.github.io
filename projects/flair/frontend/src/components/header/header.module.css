@@ -1,0 +1,34 @@
+.container{
+    box-shadow: 0 3px 6px -1px rgba(0,0,0,.16);
+    position: sticky;
+    top: 0;
+    background: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation_links ul{
+    list-style: none;
+    display: flex;
+  }
+
+  .navigation_links ul li :hover{
+    color:lightgreen;
+  }
+
+  .navigation_links ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Menu Dropdown Icon svg*/
+  .navigation_links ul li svg {
+    stroke: #fff;
+  }
+
+  .navigation_links ul li:hover svg {
+    stroke: lightgreen;
+  }
+
+
