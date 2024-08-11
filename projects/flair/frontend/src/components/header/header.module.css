@@ -38,6 +38,46 @@
   stroke: lightgreen;
 }
 
+.menu_dropdown {
+  position: relative;
+
+  & menu {
+    position: absolute;
+    box-shadow: 7px 7px 10px 0 rgba(0,0,0,.16);
+    border: 3px solid #000;
+    background-color: #fff;
+    border-radius: 15px;    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 80vh;
+    overflow-y: scroll;    
+
+    & li {
+      padding: 10px;
+      min-width: 240px;
+      line-height: 1;
+      margin-bottom: 6px;
+
+      & a {
+        color: #000;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      & a:hover {
+        color: #8c0ac8;
+      }
+    }
+  }
+}
+
+.menu_dropdown:hover menu{
+  display: block;
+}
+
+
+
 /* Extra Dropdown */
 .extra_dropdown {
   display: flex;

@@ -1,6 +1,7 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import { DownArrow, MenuDropdownIcon } from "./menu_icon";
+import NavigationLinks from "./navigation_links";
 
 
 const FlairLogo = () => {
@@ -28,30 +29,11 @@ const Globe = () => {
     )   
 }
 
-
-const NavigationLinks = () => {
-    return (
-        <nav className={styles.navigation_links}>
-
-            <DownArrow /> {/* adds a hidden down arrow that is reused by MenuDropdownIcon */}
-            <ul>
-                <li><a href="/">deals <MenuDropdownIcon /></a></li>
-                <li><a href="/">destinations <MenuDropdownIcon /></a></li>
-                <li><a href="/">route map</a></li>
-                <li><a href="/">travel info <MenuDropdownIcon /></a></li>
-                <li><a href="/">optional fees</a></li>
-                <li><a href="/">help <MenuDropdownIcon /></a></li>
-            </ul>
-        </nav>
-    )
-}
-
 const LanguageDropdown = () => {
     return <div>
         <button className={styles.language_button}>
             <Globe />
-            <span id="txtLanguage">EN <MenuDropdownIcon /></span>
-            
+            <span id="txtLanguage">EN <MenuDropdownIcon /></span>  
         </button>
         
     </div>
@@ -87,10 +69,19 @@ const ExtraDropdown = () => {
 }
 export default function Header() {
     return (
+        <>
+
+        {/* 
+            adds a hidden down arrow that is reused by MenuDropdownIcon element.
+            NavigationLinks and ExtraDropdown use it. 
+        */}
+        <DownArrow />
+
         <header className={styles.container}>
             <a href="/"><FlairLogo /></a>
             <NavigationLinks />
             <ExtraDropdown />
         </header>
+        </>
     );
 }

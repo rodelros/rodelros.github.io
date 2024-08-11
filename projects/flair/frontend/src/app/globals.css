@@ -5,3 +5,7 @@ body{
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
+
+.no_display{
+    display: none;
+}
