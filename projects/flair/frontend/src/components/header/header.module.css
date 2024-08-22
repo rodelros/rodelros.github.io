@@ -1,4 +1,4 @@
-.container{
+.main_header {
   box-shadow: 0 3px 6px -1px rgba(0,0,0,.16);
   position: sticky;
   top: 0;
@@ -10,7 +10,7 @@
   padding: 0 40px;
 }
 
-.navigation_links ul{
+.navigation_links > ul{
   white-space: nowrap;
   list-style: none;
   display: flex;
@@ -20,28 +20,28 @@
   flex-basis: 60%;
 }
 
-.navigation_links ul li :hover{
+.navigation_links > ul > li :hover{
   color:lightgreen;
 }
 
-.navigation_links ul li a {
+.navigation_links a {
   color: #fff;
   text-decoration: none;
 }
 
 /* Menu Dropdown Icon svg*/
-.navigation_links ul li svg {
+.navigation_links > ul > li > svg {
   stroke: #fff;
 }
 
-.navigation_links ul li:hover svg {
+.navigation_links > ul li:hover > svg {
   stroke: lightgreen;
 }
 
 .menu_dropdown {
   position: relative;
 
-  & menu {
+  & > menu {
     position: absolute;
     box-shadow: 7px 7px 10px 0 rgba(0,0,0,.16);
     border: 3px solid #000;
@@ -53,30 +53,30 @@
     max-height: 80vh;
     overflow-y: scroll;    
 
-    & li {
+    & > li {
       padding: 10px;
       min-width: 240px;
       line-height: 1;
       margin-bottom: 6px;
 
-      & a {
+      & > a {
         color: #000;
         font-size: 20px;
         font-weight: 900;
       }
 
-      & a:hover {
+      & > a:hover {
         color: #8c0ac8;
       }
     }
   }
 }
 
-.menu_dropdown:hover menu{
-  display: block;
-}
 
-
+  /* the second child is the dropdown element which is initially hidden */
+  .menu_dropdown:hover :nth-child(2){
+    display: block;
+  }
 
 /* Extra Dropdown */
 .extra_dropdown {
@@ -114,3 +114,4 @@
   border: none;
   cursor: pointer;
 }
+

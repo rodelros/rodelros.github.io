@@ -77,7 +77,7 @@ export default function Header() {
         */}
         <DownArrow />
 
-        <header className={styles.container}>
+        <header className={styles.main_header}>
             <a href="/"><FlairLogo /></a>
             <NavigationLinks />
             <ExtraDropdown />

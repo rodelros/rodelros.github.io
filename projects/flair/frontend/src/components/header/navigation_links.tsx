@@ -1,10 +1,10 @@
 import styles from "./header.module.css";
 import {MenuDropdownIcon } from "./menu_icon";
+import { MenuLink, Section } from "./types";
+import TravelInfoDropdown from "./travel_info_dropdown/dropdown";
+import {travelInfoDropdownSections} from "./travel_info_dropdown/sections";
+import { Destinations } from "./destinations";
 
-type MenuLink = {
-    label: string,
-    link: string
-}
 const DropDownMenu = ({label, dropdown}: {label: string, dropdown: JSX.Element}) => {
     return( 
         <div className={styles.menu_dropdown}>
@@ -13,44 +13,22 @@ const DropDownMenu = ({label, dropdown}: {label: string, dropdown: JSX.Element})
         </div>);    
 }
 
-const DealsMenu = () => {
-
+const NavMenuLink = ({label, links}: {label: string, links: MenuLink[]}) => {
     const submenu = <menu className={"no_display"}>
-        <li><a href="/">current sales and offers</a></li>
-        <li><a href="/">top flight deals</a></li>
+        {links.map((link) => <li key={link.label}><a href={link.link}>{link.label}</a></li>) }
     </menu>;
 
-    return DropDownMenu({label: "deals", dropdown: submenu});
-}
-
-const DestinationsMenu = ({destinations}:{destinations: MenuLink[]}) => {
-
-    const submenu = <menu className={`${"no_display"}`}>
-        {destinations.map((destination) => <li key={destination.label}><a href={destination.link}>{destination.label}</a></li>) }
-    </menu>;    
-
-    return DropDownMenu({label: "destinations", dropdown:submenu});
-}
-
-const TravelInfoMenu = () => {
-    return DropDownMenu({label: "travel info", dropdown: <></>});
-}
-
-const HelpMenu = ({helpLinks}: {helpLinks: MenuLink[]}) => {
-
-    const submenu = <menu className={`${"no_display"}`}>
-        {helpLinks.map((link) => <li key={link.label}><a href={link.link}>{link.label}</a></li>) }
-    </menu>;
-    return DropDownMenu({label: "help", dropdown: submenu});
+    return DropDownMenu({label: label, dropdown: submenu});
 }
 
 // fetch this from the backend
-const destinations: MenuLink[] = [
-    {label: "canada", link: "/"},
-    {label: "united states", link: "/"},
-    {label: "australia", link: "/"},
-    {label: "new zealand", link: "/"},
-]
+const sections =travelInfoDropdownSections;
+
+const TravelInfoMenu = () => {
+    return DropDownMenu({label: "travel info", dropdown: <TravelInfoDropdown sections={sections}/>});
+}
+
+// fetch these from the backend
 
 const helpLinks: MenuLink[] = [
     {label: "help centre", link: "/"},
@@ -61,16 +39,21 @@ const helpLinks: MenuLink[] = [
     {label: "travel advisories", link: "/"},
 ]
 
+const deals: MenuLink[] = [
+    {label: "current sales & offers", link: "/"},
+    {label: "top flights", link: "/"},
+]
+
 export default function NavigationLinks() {
     return(
     <nav className={styles.navigation_links}>
         <ul>
-            <li><DealsMenu /></li>
-            <li><DestinationsMenu destinations={destinations}/></li>
+            <li><NavMenuLink label="deals" links={deals}/></li>
+            <li><NavMenuLink label="destinations" links={Destinations}/></li>
             <li><a href="/">route map</a></li>
             <li><TravelInfoMenu /></li>
             <li><a href="/">optional fees</a></li>
-            <li><HelpMenu helpLinks={helpLinks}/></li>
+            <li><NavMenuLink label="help" links={helpLinks}/></li>
         </ul>
     </nav>);
 }
