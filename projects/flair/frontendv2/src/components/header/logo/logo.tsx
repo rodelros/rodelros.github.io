@@ -7,7 +7,7 @@ export default function Logo() {
             alt="Flair Logo"
             sizes="100vw"
             width={150}
-            height={150}
+            height={66}
             priority={true}
         />
     );

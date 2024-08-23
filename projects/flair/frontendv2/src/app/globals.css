@@ -12,6 +12,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #fff;
+  height: 100%;
 }
 
 .no_display{
@@ -22,4 +24,13 @@ body {
 {
   text-decoration: none;
   cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  display: block;
+  position: absolute;
 }
