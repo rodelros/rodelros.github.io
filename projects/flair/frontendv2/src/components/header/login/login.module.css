@@ -5,12 +5,18 @@
     display: block;    
 }
 
+.login > img 
+{
+    width: 2rem;
+    min-width: 24px;
+}
+
 .login > div
 {
     position:absolute;
     display: block;
     margin: 0;
-    top: 3.2srem;    
+    top: 3.2rem;    
     padding: 0.5rem 0;
     width: 8rem;
     font-size: 1rem;

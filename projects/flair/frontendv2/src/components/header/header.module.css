@@ -2,8 +2,13 @@
     background-color: #212529;
     display: flex;
     justify-content: space-between;
-    padding:10px 40px;
     align-items: center;
+    box-shadow: 0 3px 6px -1px rgba(0,0,0,.16);
+
+    height: calc(50px + 3vw);
+    padding: 0 calc(1rem + 2vw);
+    min-height: 65px;  
+    min-width:320px;   
 }
 
 /*===============*/
