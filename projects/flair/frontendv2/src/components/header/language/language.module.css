@@ -1,0 +1,30 @@
+.language
+{
+    position: relative;
+}
+
+.language > button 
+{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background-color: #212529;
+    color: #fff;
+    border-radius: 20px;
+    border-color: #fff;
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    position: relative;
+}
+
+.language:hover > button
+{
+    border: 3px solid #fff;
+}
+
+.language > button > div:nth-child(2)
+{
+    font-size:1.1rem;
+}

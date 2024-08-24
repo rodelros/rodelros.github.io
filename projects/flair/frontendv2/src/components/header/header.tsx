@@ -3,6 +3,7 @@ import Logo from './logo/logo';
 import Login from './login/login';
 import Navigation from './navigation/navigation';
 import Language from './language/language';
+import Hamburger from './hamburger/hamburger';
 
 export default function Header() {
     return (
@@ -11,6 +12,7 @@ export default function Header() {
             <Navigation />
             <Language />
             <Login />
+            <Hamburger/>
         </header>
     );
 }

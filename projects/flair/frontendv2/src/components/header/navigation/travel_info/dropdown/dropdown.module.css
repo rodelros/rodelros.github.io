@@ -1,0 +1,13 @@
+.dropdown
+{
+    left: -30rem;
+}
+
+.cards
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem 1rem;
+    width: 46vw;
+    row-gap: 2rem;
+}

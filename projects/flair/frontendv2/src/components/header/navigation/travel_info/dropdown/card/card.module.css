@@ -1,0 +1,29 @@
+
+.card header
+{
+    display: flex;
+    font-weight: 900;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.card header:hover
+{
+    color:#8c0ac8;
+}
+
+.card > ul
+{
+    list-style: none;
+}
+
+.card > ul > li > a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.card > ul > li > a:hover
+{
+    color:#8c0ac8;
+}
