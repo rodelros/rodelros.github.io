@@ -131,6 +131,11 @@ class Grid extends HTMLElement{
 		};
 	}
 	
+	/**
+	 * Appends the grid template to the current element.
+	 *
+	 * @return {void}
+	 */
 	_render(){
 		this.appendChild(gridTemplate.content.cloneNode(true));
 	}
@@ -165,7 +170,8 @@ class Grid extends HTMLElement{
 	deleteRow(row){
 		let r = this.rowById(row.id);
 		if(r !== -1){
-			document.remove(r.element);
+			//document.remove(r.element);
+			r.element.remove();
 			this.rows.splice(r, 1);
 		}
 	}

@@ -14,7 +14,7 @@
 	
 	
 	// atomic components are component building blocks
-	// that does not depend on other components
+	// that do not depend on other components
 	class AtomicComponent extends HTMLElement{
 		constructor(){
 			super();
