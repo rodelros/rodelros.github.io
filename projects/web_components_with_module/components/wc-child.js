@@ -7,7 +7,7 @@ template.innerHTML =
     </summary>
     <p>
         <slot name="content">default content</slot>
-    </p>
+        </p>
 </details>`;
 
 
