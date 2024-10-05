@@ -1,20 +1,34 @@
 
 const template = document.createElement('template')
 template.innerHTML = `
-    <button onclick="alert('Hello World!')">
+    <button>
         Click here!
     </button>
 `;
 
 export class WcButton extends HTMLElement {
+
     constructor() {
         super();
-    }   
-
-    connectedCallback() {
         const shadow = this.attachShadow({ mode: 'open' });
         shadow.appendChild(template.content.cloneNode(true));
-        
+
+    }   
+
+    handleEvent = (evt) => {
+        alert('what now.');
+    };
+
+    addEventListeners = () => {
+        const sr = this.shadowRoot;
+        sr.querySelector('button').addEventListener('click', this);
+    };
+    connectedCallback() {    
+        this.addEventListeners();
+    }
+
+    disconnectedCallback() {
+        removeEventListener('click', this);
     }
 }
 
