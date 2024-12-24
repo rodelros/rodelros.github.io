@@ -40,9 +40,11 @@ let validation = new Proxy(state,{
 let txtDisplay = new Proxy(document.getElementById('txtDisplay'), {
     set:function(obj, prop, newVal){
         if(prop === 'value'){
-            console.log(newVal);
+            obj.value = newVal;
         }
-    }
+    },
+    get: (obj, prop, receiver) => prop === 'value' ? obj.value : Reflect.get(obj, prop, receiver),
+
 });
 
 console.log(validation.id);

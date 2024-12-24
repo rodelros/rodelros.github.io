@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        p, span, div {
+            line-height: 1.2rem;
+        }
+
+        [cid]:hover {
+            box-shadow: 1px 1px 5px #ccc;
+        }
+
+        [cid]:focus {
+            outline: none;
+            box-shadow: 1px 1px 5px #ccc;
+            padding: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wall {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border: 1px solid lightgrey;
+            width:40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <button id="btnSave">Save</button>
+        Edit the elements then press the Save button.
+    </header>
+
+	<main>
+        <h2 cid="home.title" contenteditable="true">This is inside an H2 element.</h2>
+        <p cid="home.content" contenteditable="true">This is a paragraph.</p>
+        <div>
+            <span cid="home.motto" contenteditable="true">This is insidea span</span>
+        </div>
+
+        <div cid="home.description" contenteditable="true">
+            This is inside a div
+        </div>
+
+        <div class="wall">
+            <p cid="home.first" contenteditable="true">First cell</p>
+            <p cid="home.second" contenteditable="true">Second cell</p>
+            <p cid="home.third" contenteditable="true">Third cell</p>
+            <p cid="home.fourth" contenteditable="true">Fourth cell</p>
+        </div>
+    </main>
+
+    <script>
+        'use strict';
+        const elements = document.querySelectorAll('[cid]');
+
+        document.getElementById('btnSave').addEventListener('click', () => {
+            elements.forEach(e => {
+                console.log(`cid: ${e.getAttribute('cid')} content: ${e.innerHTML}`);
+            });
+        });
+    </script>
+
+</body>
+</html>

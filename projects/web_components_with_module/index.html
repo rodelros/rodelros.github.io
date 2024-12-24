@@ -7,9 +7,18 @@
 
     <script src="components/wc-parent.js" type="module"></script>
     <script src="components/wc-attribute.js" type="module"></script>
+
+    <script src="components/dynamic-slot/splash.js"></script>
+    <style>
+        .no-display {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <wc-parent></wc-parent>
-    <wc-attribute></wc-attribute>
+    <wc-attribute data-value="test"></wc-attribute>
+
+    <wc-splash id="splash" class="no-display"></wc-splash>
 </body>
 </html>
