@@ -26,7 +26,7 @@ fn with_params(x:i32, y:char) {
 
 fn with_return() -> bool {
     println!("----- with_return -----");
-    return true;
+    true
 }
 
 fn control_flow() {

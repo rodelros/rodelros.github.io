@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal Dialog</title>
-    <script src="modal.js"></script>
 </head>
 <body>
     <main>
@@ -16,9 +15,9 @@
             this is a tall element.
         </p>
     </main>
-<script src="wc-signup.js"></script>
-<script>
-    'use strict';
+<script src="wc-signup.js" type="module"></script>
+<script type="module">
+    import {showModal} from './modal.js';
 
     document.getElementById('openModal').addEventListener('click', () => {
         showModal(document.createElement('wc-signup'));
