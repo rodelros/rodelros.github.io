@@ -5,7 +5,10 @@ type operation = (a: number, b: number) => number;
 
 interface Operations {
     add : (x:number, y:number) => number;
+    minus(x:number, y:number): number;
 }
+
+
 
 
 // callable function with properties
@@ -28,7 +31,10 @@ type Adder = {
     display?.append(operation(1, 2).toString());
 
     display?.append(`Using interface:`);
-    const operations: Operations = {add: (x, y) => x + y};
+    const operations: Operations = {
+        add: (x, y) => x + y,
+        minus(x, y) { return x - y; }
+    };
     display?.append(operations.add(1, 2).toString());
 
     display?.append(`Using function with properties:`);

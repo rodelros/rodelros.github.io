@@ -1,5 +1,5 @@
 "use strict";
-;
+
 class TypesTest {
     run() {
         let a = { id: 1, name: "test" };
