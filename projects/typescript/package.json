@@ -1,11 +1,9 @@
 {
   "dependencies": {
-    "local-web-server": "^5.3.1",
-    "rimraf": "^5.0.5"
   },
   "scripts": {
-    "clean": "rimraf js/",
+    "clean": "npx rimraf js/",
     "build": "tsc --project ./ts/tsconfig.json",
-    "start": "npm run clean && npm run build && npx ws"
+    "start": "npm run clean && npm run build && npx http-server"
   }
 }

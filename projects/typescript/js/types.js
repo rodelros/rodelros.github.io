@@ -2,8 +2,8 @@
 ;
 class TypesTest {
     run() {
-        var a = { id: 1, name: "test" };
-        var b = { id: 1, name: "test" };
+        let a = { id: 1, name: "test" };
+        let b = { id: 1, name: "test" };
         console.log("Using type");
         this.displayAccount(a);
         console.log('Using interface');
