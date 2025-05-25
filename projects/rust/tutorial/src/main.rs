@@ -1,16 +1,16 @@
 #![allow(dead_code)]
 
 fn main() {
-    
+
     //new_function();
     //with_params(45, 'H');
     //let mut b = with_return();
     //println!("return value is {}", b);
     //b = false;
     //println!("b updated to {}", b);
-    control_flow();
-    
-    //strings();
+    //control_flow();
+
+    strings();
     //ownership();
 }
 
@@ -66,7 +66,10 @@ fn strings() {
     str1 = "changed it";
     str2 = "this also".to_string();
 
-    println!("{} - {}", str1, str2);
+    let x = 5;
+    let str3 = format!("x is {x}", x = x);
+
+    println!("{} - {} - {}", str1, str2, str3);
 
 
 }
