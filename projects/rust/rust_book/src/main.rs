@@ -18,11 +18,19 @@ fn main() {
     display_title("implicit multi pointer deref");
     implicit_multi_pointer_deref();
 
+    display_title("vector example");
+    vector_example();
+
+    let mut s = String::from("Hello, world!");
+    s.chars().for_each(|c| print!("{} ", c));
+
+    println!();
+
 }
 
 fn display_title(title: &str) { 
     let hr = String::from("=".repeat(title.len() + 2));
-    println!("{}\n {}\n{}", hr, title, hr);
+    println!("\n{}\n {}\n{}", hr, title, hr);
 }
 
 fn invalid_array_access() {
@@ -94,4 +102,13 @@ fn struct_partial_move() {
 fn implicit_multi_pointer_deref() {
     let x: Box<Box<i32>> = Box::new(Box::new(-5));
     println!("abs of x is {}", x.abs());
+}
+
+fn vector_example() {
+    let mut v = vec![1,2,3];
+    v.push(4);
+    print!("Vector contents: ");
+    for i in &v {
+        print!("{} ", i);
+    }
 }
