@@ -21,12 +21,8 @@ public class Product(string Name, decimal Price)
 
     public decimal GetDiscountedPrice()
     {
-        var discount = 0M;
-        foreach (var discountStrategy in _discountStrategies)
-        {
-            discount += discountStrategy(this);
-        }
-        return discount >= Price ? Price : Price - discount;
+        decimal totalDiscount = _discountStrategies.Sum(strategy => strategy(this));
+        return Math.Max(0, Price - Math.Min(totalDiscount, Price));
     }
 }
 
