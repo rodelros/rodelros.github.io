@@ -6,7 +6,7 @@ public delegate decimal DiscountStrategy(Product product);
 public class Product(string Name, decimal Price)
 {
     public string Name { get; } = Name;
-    public decimal Price { get;} = Price;
+    public decimal Price { get; } = Price;
 
     private List<DiscountStrategy> _discountStrategies = [];
     public void AddDiscount(DiscountStrategy discountStrategy)
@@ -19,10 +19,15 @@ public class Product(string Name, decimal Price)
         _discountStrategies.Remove(discountStrategy);
     }
 
-    public decimal GetDiscountedPrice()
+    private decimal GetDiscountedPrice()
     {
         decimal totalDiscount = _discountStrategies.Sum(strategy => strategy(this));
         return Math.Max(0, Price - Math.Min(totalDiscount, Price));
+    }
+    
+    public decimal DiscountedPrice
+    {
+        get => GetDiscountedPrice();
     }
 }
 
@@ -48,7 +53,7 @@ public static class Test
 {
     static void Display(this Product product)
     { 
-        Console.WriteLine($"Product: {product.Name}, Original Price: {product.Price:C}, Discounted Price: {product.GetDiscountedPrice():C}");
+        Console.WriteLine($"Product: {product.Name}, Original Price: {product.Price:C}, Discounted Price: {product.DiscountedPrice:C}");
     }
 
     public static void Run()
