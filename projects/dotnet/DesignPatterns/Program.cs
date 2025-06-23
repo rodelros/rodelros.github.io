@@ -15,5 +15,10 @@ DesignPatterns.Strategy.Test.Run();
 appendLine("Composite Strategy Pattern");
 DesignPatterns.CompositeStrategy.Test.Run();
 
+appendLine("Command Pattern");
+DesignPatterns.Command.Test.Run();
+
+appendLine("Command History Pattern");
+DesignPatterns.CommandHistory.Test.Run();
 
 
