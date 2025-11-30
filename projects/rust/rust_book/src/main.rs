@@ -21,7 +21,7 @@ fn main() {
     display_title("vector example");
     vector_example();
 
-    let mut s = String::from("Hello, world!");
+    let s = String::from("Hello, world!");
     s.chars().for_each(|c| print!("{} ", c));
 
     println!();

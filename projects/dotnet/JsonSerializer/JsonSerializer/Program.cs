@@ -13,11 +13,11 @@ var memo = new Memo {
             ,State = "NCR"
         }
     }
-    ,Ints = new int[] { 1, 2,3 }
-    ,Tags = new List<string> { 
+    ,Ints = [1, 2,3]
+    ,Tags = [ 
          "main"
         ,"first"
-    }
+    ]
 };
 
 var memoStr = System.Text.Json.JsonSerializer.Serialize(memo);
@@ -48,5 +48,5 @@ foreach (var el in root.GetProperty("Tags").EnumerateArray())
 
 Console.WriteLine($"{stateStr} {status}");
 
-Console.ReadKey();
+//Console.ReadLine();
 
