@@ -6,14 +6,14 @@
     "configurations": [
         {
             "name": "(Windows) Launch",
-            "type": "cppvsdbg",
+            "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/target/debug/tutorial.exe",
-            "args": [],
-            "stopAtEntry": false,
+            "cargo": {
+                "args": [
+                    "build" 
+                ]
+            },
             "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false
         }
     ]
 }
