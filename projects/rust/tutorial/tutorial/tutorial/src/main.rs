@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 
+use std::i32;
+use tutorial::{self, print_header};
+
 fn main() {
 
     //new_function();
@@ -12,6 +15,31 @@ fn main() {
 
     strings();
     //ownership();
+
+    print_header("Calling a public function from lib.rs");
+
+    let x = i32::MAX;
+    let y = 5;
+    let s = tutorial::add(x,y);
+
+    println!("add({},{}) = {}", x,y,s);
+
+    if let Some(sum) = tutorial::add_checked(x, y){
+        println!("using if let, add_checked({},{}) = {}", x,y,sum);
+    } else {
+        println!("using if let, overflowed!!!");
+    }
+
+    match tutorial::add_checked(x, y){
+        Some(sum) => println!("using match, add_checked({},{}) = {}", x,y,sum),
+        None => println!("using match, overflowed!!!")
+    }
+
+    print_header("Closure");
+    let f = |s:&str| {println!("from closure, {}", s)};
+
+    f("This is the string!!!");
+    
 }
 
 fn new_function() {
@@ -70,7 +98,6 @@ fn strings() {
     let str3 = format!("x is {x}", x = x);
 
     println!("{} - {} - {}", str1, str2, str3);
-
 
 }
 
