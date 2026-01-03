@@ -1,4 +1,4 @@
 [workspace]
-members = ["basics"]
+members = ["basics", "traits"]
 
 resolver = "3"

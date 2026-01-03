@@ -1,5 +1,6 @@
 use basics::utils::get_arguments;
-use basics::utils::print_header;
+use basics::utils::{print_header, print_sub_header};
+use basics::age_plus_one;
 
 
 fn main() {
@@ -12,5 +13,22 @@ fn main() {
     basics::data_types::tuples::test();
     basics::data_types::structs::test();
 
+    basics::models::transaction::update::update();
+    basics::enums::message::test();
+    basics::lifetimes::test();
+
+    print_sub_header("string format");
+    let name = String::from("John");
+    let age = 30;
+    println!("{} is {} years old", name, age);
+
+    let s = format!("{name} is {} years old", age_plus_one(age));
+    println!("s: {}", s);   
+
+    basics::patterns::builder::test();
+    basics::data_types::hash_maps::test();
 
 }
+
+
+
