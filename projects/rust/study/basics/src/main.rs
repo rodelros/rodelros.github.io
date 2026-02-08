@@ -2,6 +2,8 @@ use basics::utils::get_arguments;
 use basics::utils::{print_header, print_sub_header};
 use basics::age_plus_one;
 
+mod non_mod; //declare the file non_mod.rs as a module
+
 
 fn main() {
 
@@ -27,6 +29,8 @@ fn main() {
 
     basics::patterns::builder::test();
     basics::data_types::hash_maps::test();
+
+    non_mod::show();
 
 }
 
