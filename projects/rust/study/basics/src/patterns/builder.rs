@@ -7,7 +7,7 @@ struct User {
     email: Option<String>,
     password: Option<String>,
     is_active: bool,
-    is_admin: bool
+    is_admin: bool,
 }
 
 impl User {
@@ -18,7 +18,7 @@ impl User {
             email: None,
             password: None,
             is_active: true,
-            is_admin: false
+            is_admin: false,
         }
     }
 
@@ -27,7 +27,7 @@ impl User {
         self
     }
 
-    fn set_email(&mut self, email: &str) -> &mut Self{
+    fn set_email(&mut self, email: &str) -> &mut Self {
         self.email = Some(email.to_string());
         self
     }
@@ -42,6 +42,15 @@ impl User {
         self
     }
 
+    fn set_is_active(&mut self, is_active: bool) -> &mut Self {
+        self.is_active = is_active;
+        self
+    }
+
+    fn set_is_admin(&mut self, is_admin: bool) -> &mut Self {
+        self.is_admin = is_admin;
+        self
+    }
 }
 
 pub fn test() {
@@ -50,12 +59,12 @@ pub fn test() {
     print_sub_header("using method syntax to create struct");
 
     let mut user = User::new();
-    user
-        .set_first_name("John")
+    user.set_first_name("John")
         .set_email("test@test.com")
         .set_last_name("last")
-        .set_password("password");
-    
-    println!("user: {}", user.first_name.unwrap());
+        .set_password("password")
+        .set_is_active(true)
+        .set_is_admin(false);
 
+    println!("user: {}", user.first_name.unwrap());
 }
