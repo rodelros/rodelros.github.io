@@ -521,3 +521,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# rust
+/target/
