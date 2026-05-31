@@ -1,4 +1,4 @@
 [workspace]
-members = ["basics", "traits"]
+members = ["basics", "traits", "smart_pointers"]
 
 resolver = "3"

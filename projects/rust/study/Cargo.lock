@@ -7,6 +7,13 @@ name = "basics"
 version = "0.1.0"
 
 [[package]]
+name = "smart_pointers"
+version = "0.1.0"
+dependencies = [
+ "basics",
+]
+
+[[package]]
 name = "traits"
 version = "0.1.0"
 dependencies = [
