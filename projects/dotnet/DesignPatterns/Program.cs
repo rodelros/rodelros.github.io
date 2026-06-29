@@ -21,4 +21,7 @@ DesignPatterns.Command.Test.Run();
 appendLine("Command History Pattern");
 DesignPatterns.CommandHistory.Test.Run();
 
+appendLine("Strategy Cache Pattern");
+DesignPatterns.StrategyCache.Test.Run();
+
 
