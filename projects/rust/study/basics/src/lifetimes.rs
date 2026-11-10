@@ -1,4 +1,4 @@
-use crate::utils::{print_header,print_sub_header};
+use crate::utils::{print_header, print_sub_header};
 
 pub fn test() {
     print_header("lifetimes test");
@@ -7,12 +7,12 @@ pub fn test() {
     let should_compare = true;
     if should_compare {
         let right = String::from("I am right");
-        let longer_str = longer_string(&left, &right);    
-        println!("longer_str: {}", longer_str);   
+        let longer_str = longer_string(&left, &right);
+        println!("longer_str: {}", longer_str);
     }
 
-
-
+    // This will fail to compile
+    // let longer_str = longer_string(&&left, &right);
 }
 
 fn longer_string<'a>(left_string: &'a str, right_string: &'a str) -> &'a str {
